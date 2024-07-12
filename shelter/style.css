@@ -2,3 +2,50 @@
     margin: 0;
     padding: 0;
 }
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.all-screen {
+    width: 100%;
+}
+
+.center {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.start-screen {
+    height: 908px;
+}
+
+.about {
+    height: 588px;
+}
+
+.pets {
+    height: 877px;
+}
+
+.help {
+    height: 611px;
+}
+
+.donatation {
+    height: 462px;
+}
+
+.main-footer {
+    height: 350px;
+}
+
+.brown {
+    background-image: linear-gradient(135deg, #534135, #222021);
+}
+
+.grey {
+    background-color: #F6F6F6;
+}
