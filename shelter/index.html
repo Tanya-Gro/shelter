@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/favicon.ico">
 </head>
 
 <body>
     <div class="container">
-        <div class="start-screen-container all-screen brown">
-            <div class="start-screen center coll">
-                <header class="main-header">
+        <div class="all-screen bg-brown">
+            <div class="start-screen-container  center coll">
+                <header class="main-header between">
                     <div>
                         <h1 class="logo">Cozy House</h1>
                         <p class="subtitle">Shelter for pets in Boston</p>
                     </div>
                     <nav class="navigation">
-                        <ul class="navigation-elem">
-                            <li class="navigation-item"><a href="#about">About the shelter</a></li>
-                            <li class="navigation-item"><a href="#pets">Our pets</a></li>
-                            <li class="navigation-item"><a href="#help">Help the shelter</a></li>
-                            <li class="navigation-item"><a href="#main-footer">Contacts</a></li>
+                        <ul class="navigation-elem between">
+                            <li class="navigation-item"><a class="p-l color-dark-s" href="#about">About the shelter</a>
+                            </li>
+                            <li class="navigation-item"><a class="p-l color-dark-s" href="#pets">Our pets</a></li>
+                            <li class="navigation-item"><a class="p-l color-dark-s" href="#help">Help the shelter</a>
+                            </li>
+                            <li class="navigation-item"><a class="p-l color-dark-s" href="#main-footer">Contacts</a>
+                            </li>
                         </ul>
                     </nav>
                 </header>
@@ -34,7 +38,7 @@
                             extremely wide and
                             open heart. He or she will love you more than anybody else in the world, you will see!</p>
 
-                        <button class="but-make-friend bgcolor-primary">Make a friend</button>
+                        <button class="button_primary bg-primary">Make a friend</button>
                     </div>
                     <div class="start-screen-img">
                         <img src="./assets/png/start-screen-puppy.png" alt="puppy">
@@ -42,13 +46,13 @@
                 </div>
             </div>
         </div>
-        <div class="about all-screen" id="about">
+        <div class="about-container all-screen" id="about">
             <div class="about center row">
                 <div class="about-img">
                     <img src="./assets/png/about-pets.png" alt="About pets">
                 </div>
                 <div class="about-content">
-                    <h3 class="h-3">About the shelter “Cozy House”</h3>
+                    <h3 class="h-3  color-dark-l">About the shelter “Cozy House”</h3>
                     <p class="p-l color-dark-xl">Currently we have 121 dogs and 342 cats on our hands and statistics
                         show that only
                         20% of them will find a family. The others will continue to live with us and will be waiting for
@@ -62,22 +66,46 @@
                 </div>
             </div>
         </div>
-        <div class="pets all-screen grey" id="pets">
-            <div class="pets center">
-
+        <div class="pets-container all-screen bg-grey" id="pets">
+            <div class="pets center coll">
+                <div class="pets-header">
+                    <h3 class="h-3 color-dark-l">Our friends who are looking for a house</h3>
+                </div>
+                <div class="pets-slider row">
+                    <button class="round-button"><img class="round-buttom-img" src="./assets/png/Arrow.png"
+                            alt="Arrow"></button>
+                    <article class="slider-card coll bg-light-s">
+                        <img class="slider-img" src="./assets/slider/pets-katrine.png" alt="katrine">
+                        <p class="slider-p color-dark-l">Katrine</p>
+                        <button class="slider-button bg-light-s">Learn more</button>
+                    </article>
+                    <article class="slider-card coll bg-light-s">
+                        <img class="slider-img" src="./assets/slider/pets-jennifer.png" alt="jennifer">
+                        <p class="slider-p color-dark-l">Jennifer</p>
+                        <button class="slider-button bg-light-s">Learn more</button>
+                    </article>
+                    <article class="slider-card coll bg-light-s">
+                        <img class="slider-img" src="./assets/slider/pets-woody.png" alt="woody">
+                        <p class="slider-p  color-dark-l">Woody</p>
+                        <button class="slider-button bg-light-s">Learn more</button>
+                    </article>
+                    <button class="round-button"><img class="round-buttom-img rotate" src="./assets/png/Arrow.png"
+                            alt="Arrow"></button>
+                </div>
+                <button class="button_primary bg-primary">Get to know the rest</button>
             </div>
         </div>
-        <div class="help all-screen" id="help">
+        <div class="help-container all-screen" id="help">
             <div class="help center">
 
             </div>
         </div>
-        <div class="donatation all-screen grey">
+        <div class="donatation-container all-screen bg-grey">
             <div class="donatation center">
 
             </div>
         </div>
-        <div class="main-footer all-screen brown" id="main-footer">
+        <div class="main-footer-container all-screen bg-brown" id="main-footer">
             <div class="main-footer center">
 
             </div>

@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "Arial";
+    src: url("./assets/fonts/arial/arial-regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("./assets/fonts/georgia/georgia-regular.ttf");
+    font-weight: 400;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +30,11 @@
     flex-direction: row;
 }
 
+.between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .all-screen {
     width: 100%;
 }
@@ -28,7 +45,7 @@
     border: 1px solid green;
 }
 
-.start-screen {
+.start-screen-container {
     height: 908px;
 }
 
@@ -52,22 +69,13 @@
     height: 350px;
 }
 
-.brown {
-    background-image: linear-gradient(135deg, #534135, #222021);
-}
-
-.grey {
-    background-color: #F6F6F6;
-}
-
 .main-header {
     width: 1200px;
     height: 60px;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-between;
+    margin: 30px auto 0px 30px;
     text-decoration: none;
     text-transform: none;
+    align-items: center;
 }
 
 .logo {
@@ -81,6 +89,7 @@
 }
 
 .subtitle {
+    margin-top: 10px;
     color: #FFFFFF;
     font-size: 13px;
     font-family: Arial;
@@ -92,18 +101,10 @@
 .navigation-elem {
     width: 443px;
     height: 27px;
-    display: flex;
-    justify-content: space-between;
     list-style-type: none;
 }
 
 .navigation-item a {
-    list-style-type: none;
-    color: #CDCDCD;
-    font-size: 15px;
-    font-family: Arial;
-    font-weight: 400;
-    line-height: 24px;
     text-decoration: none;
 }
 
@@ -113,16 +114,17 @@
 }
 
 .start-screen {
-    margin: 60px auto 0;
+    width: 1200px;
+    margin-top: 90px;
 }
 
 .start-screen-content {
     width: 502px;
     height: 728px;
-    justify-content: center;
 }
 
 .start-screen-content .h-2 {
+    margin-top: 163px;
     width: 310px;
 }
 
@@ -131,25 +133,26 @@
     width: 460px;
 }
 
-.start-screen-content .but-make-friend {
+.start-screen-content .button_primary {
     margin: 42px 0px 42px;
+    width: 207px;
+    height: 52px;
 }
 
 .start-screen-img {
-    margin-top: 10px;
+    /* margin-top: 67px; */
+    margin-left: 40px;
     width: 698px;
     height: 728px;
 }
 
-.but-make-friend {
-    width: 207px;
-    height: 52px;
-    border-radius: 100px 100px 100px 100px;
+.button_primary {
+    border-radius: 100px;
+    border: 0px;
 
     padding: 15px 8%;
     font-family: Georgia;
     font-size: 17px;
-    font-weight: 400;
     line-height: 22.1px;
     letter-spacing: 0.06em;
     text-align: left;
@@ -181,6 +184,77 @@
     margin-top: 25px;
 }
 
+/* --------------------------pets ---------------------------------------*/
+.pets-header {
+    width: 400px;
+    height: 90px;
+    margin: 80px auto 60px;
+
+}
+
+.pets-header .h-3 {
+    text-align: center;
+    padding: 2px auto;
+}
+
+.pets-slider {
+    width: 1200px;
+    height: 435px;
+    justify-content: space-between;
+
+}
+
+.round-buttom-img {
+    width: 14px;
+    height: 6px;
+    margin: auto auto;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.slider-img {
+    width: 270px;
+    height: 270px;
+    border-radius: 9px 9px 0px 0px;
+    margin-bottom: 30px;
+}
+
+.pets .button_primary {
+    margin: 60px auto 0px;
+    width: 261px;
+    height: 52px;
+
+    text-align: center;
+    padding: 15px 3%;
+}
+
+/* ---------------- buttons -----------*/
+.slider-button {
+    margin: 30px auto;
+    width: 187px;
+    height: 52px;
+    padding: 15px 45px 15px 45px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+
+    font-family: Georgia;
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    padding: 15px 15%;
+}
+
+.round-button {
+    width: 52px;
+    height: 52px;
+    margin-top: 192px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+}
+
 /* ---------------- headers ----------- */
 .h-2 {
     font-family: Georgia;
@@ -198,7 +272,6 @@
     line-height: 45.5px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: #545454;
 }
 
 /* -------------- paragraphs ---------- */
@@ -210,15 +283,44 @@
     text-align: left;
 }
 
+.slider-p {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22.72px;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
 /* -------------- colors -------------- */
-.bgcolor-primary {
+.bg-primary {
     background: #F1CDB3;
+}
+
+.bg-brown {
+    background-image: linear-gradient(135deg, #534135, #222021);
+}
+
+.bg-light-s {
+    background: #FAFAFA;
+}
+
+.bg-grey {
+    background-color: #F6F6F6;
 }
 
 .color-dark-s {
     color: #CDCDCD;
 }
 
+.color-dark-l {
+    color: #545454;
+}
+
 .color-dark-xl {
     color: #4C4C4C;
+}
+
+.color-dark-3xl {
+    color: #292929;
 }
