@@ -10,6 +10,10 @@
     font-weight: 400;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -104,11 +108,18 @@
     list-style-type: none;
 }
 
+.navigation-item-about {
+    /* text-decration: none; */
+    border-bottom: 3px solid #F1CDB3;
+    color: #FAFAFA;
+}
+
 .navigation-item a {
     text-decoration: none;
 }
 
 .navigation-item a:hover {
+    transition: 0.5s;
     border-bottom: 3px solid #F1CDB3;
     color: #FAFAFA;
 }
@@ -189,7 +200,6 @@
     width: 400px;
     height: 90px;
     margin: 80px auto 60px;
-
 }
 
 .pets-header .h-3 {
@@ -201,7 +211,6 @@
     width: 1200px;
     height: 435px;
     justify-content: space-between;
-
 }
 
 .round-buttom-img {
@@ -230,6 +239,44 @@
     padding: 15px 3%;
 }
 
+/* -------------------------- help ---------------------------------------*/
+.help-header {
+    width: 308px;
+    height: 90px;
+    margin: 80px auto 60px;
+}
+
+.help-header .h-3 {
+    text-align: center;
+    padding: 2px auto;
+}
+
+.help-content {
+    width: 1026px;
+    height: 281px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.help-card {
+    height: 113px;
+    justify-content: space-between;
+    margin: 0px 40px;
+    padding: 0 0;
+}
+
+.card-img {
+    margin: 0 auto;
+}
+
+.help-card .h-4 {
+    height: 23px;
+}
+
 /* ---------------- buttons -----------*/
 .slider-button {
     margin: 30px auto;
@@ -253,6 +300,7 @@
     margin-top: 192px;
     border-radius: 100px;
     border: 2px solid #F1CDB3;
+    background: #f5f5f5;
 }
 
 /* ---------------- headers ----------- */
@@ -272,6 +320,15 @@
     line-height: 45.5px;
     letter-spacing: 0.06em;
     text-align: left;
+}
+
+.h-4 {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: center;
 }
 
 /* -------------- paragraphs ---------- */
@@ -303,6 +360,10 @@
 
 .bg-light-s {
     background: #FAFAFA;
+}
+
+.color-light-s {
+    color: #FAFAFA;
 }
 
 .bg-grey {
