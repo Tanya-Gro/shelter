@@ -324,6 +324,85 @@ html {
 }
 
 /* -------------------------- footer ---------------------------------------*/
+.main-footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*******first box*****/
+.main-footer-contacts {
+    margin-left: 40px;
+}
+
+.main-footer-contacts .h-3 {
+    width: 279px;
+    height: 90px;
+}
+
+.contact-item {
+    width: 352px;
+    height: 32px;
+    margin-top: 40px;
+}
+
+.contact-item img {
+    margin: 3px 20px 3px 0px;
+}
+
+.contact-item .h-4 {
+    text-align: left;
+}
+
+.contact-item .phone {
+    margin: 0px 20px 0px 0px;
+}
+
+.contact-item .h-4 {
+    margin-top: 5px;
+}
+
+/*****second box******/
+.main-footer-location .h-3 {
+    width: 270px;
+    height: 90px;
+    margin: 0px 34px 31px 1px;
+}
+
+.location-item-boston {
+    width: 302px;
+    height: 46px;
+}
+
+.location-item-boston img {
+    margin-top: 6px;
+}
+
+.location-item-boston .h-4 {
+    text-align: left;
+}
+
+.location-item-london {
+    width: 302px;
+    height: 32px;
+    margin: 32px 0px 0px 0px;
+}
+
+.location-item-boston img,
+.location-item-london img {
+    width: 22px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.location-item-london .h-4 {
+    margin-top: 5px;
+}
+
+.main-footer-img {
+    width: 300px;
+    height: 310px;
+    margin: 40px 40px 0px 0px;
+}
 
 /* ---------------- buttons -----------*/
 .button_primary {
@@ -442,6 +521,10 @@ html {
     background: #F1CDB3;
 }
 
+.color-primary {
+    color: #F1CDB3;
+}
+
 .bg-brown {
     background-image: linear-gradient(135deg, #534135, #222021);
 }
@@ -476,4 +559,8 @@ html {
 
 .color-dark-3xl {
     color: #292929;
+}
+
+.color-white {
+    color: #FFFFFF;
 }
