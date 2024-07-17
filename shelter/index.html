@@ -14,7 +14,7 @@
         <div class="all-screen bg-brown">
             <div class="start-screen-container  center coll">
                 <header class="main-header between">
-                    <div>
+                    <div class="main-header-logo">
                         <a class="logo-link" href="#">
                             <h1 class="logo">Cozy House</h1>
                         </a>
@@ -22,7 +22,7 @@
                     </div>
                     <nav class="navigation">
                         <ul class="navigation-elem between">
-                            <li class="navigation-item-about">
+                            <li class="navigation-item-about color-light-s">
                                 <p class="p-l color-light-s">About the shelter</p>
                             </li>
                             <li class="navigation-item"><a class="p-l color-dark-s" href="./pets/pets.html">Our pets</a>
@@ -80,11 +80,12 @@
         <div class="pets-container all-screen bg-grey" id="pets">
             <div class="pets center coll">
                 <div class="pets-header">
-                    <h3 class="h-3 color-dark-l">Our friends who are looking for a house</h3>
+                    <h3 class="h-3 color-dark-l">Our friends who<br>are looking for a house</h3>
                 </div>
                 <div class="pets-slider row">
-                    <button class="round-button"><img class="round-buttom-img" src="./assets/png/Arrow.png"
-                            alt="Arrow"></button>
+                    <div class="slider-round-button"><button class="round-button"><img class="round-buttom-img"
+                                src="./assets/png/Arrow.png" alt="Arrow"></button></div>
+
                     <div class="slider-card coll bg-light-s">
                         <img class="slider-img" src="./assets/slider/pets-katrine.png" alt="katrine">
                         <p class="slider-p color-dark-l">Katrine</p>
@@ -100,10 +101,12 @@
                         <p class="slider-p  color-dark-l">Woody</p>
                         <button class="slider-button bg-light-s">Learn more</button>
                     </div>
-                    <button class="round-button"><img class="round-buttom-img rotate" src="./assets/png/Arrow.png"
-                            alt="Arrow"></button>
+                    <div class="slider-round-button">
+                        <button class="round-button"><img class="round-buttom-img rotate" src="./assets/png/Arrow.png"
+                                alt="Arrow"></button>
+                    </div>
                 </div>
-                <form class="pets-link" action="./pets/pets.html">
+                <form class="pets-button-link" action="./pets/pets.html">
                     <button class="button_primary bg-primary">Get to know the rest</button>
                 </form>
             </div>
@@ -112,7 +115,7 @@
         <div class="help-container all-screen" id="help">
             <div class="help coll center">
                 <div class="help-header">
-                    <h3 class="h-3 color-dark-l">How you can help
+                    <h3 class="h-3 color-dark-l">How you can help<br>
                         our shelter</h3>
                 </div>
                 <div class="help-content">
@@ -146,11 +149,11 @@
                     </article>
                     <article class="help-card coll">
                         <img class="card-img" src="./assets/help-icons/collars-or-leashes.png" alt="collars-or-leashes">
-                        <h4 class="h-4 color-dark-l">Collars or leashes</h4>
+                        <h4 class="h-4 color-dark-l">Collars / leashes</h4>
                     </article>
                     <article class="help-card coll">
                         <img class="card-img" src="./assets/help-icons/sleeping-area.png" alt="Sleeping area">
-                        <h4 class="h-4 color-dark-l">Sleeping area</h4>
+                        <h4 class="h-4 color-dark-l">Sleeping areas</h4>
                     </article>
                 </div>
             </div>
@@ -183,6 +186,7 @@
         <!--  footer  -->
         <footer class="main-footer-container all-screen bg-brown" id="main-footer">
             <div class="main-footer center row">
+
                 <div class="main-footer-contacts coll">
                     <h3 class="h-3 color-white">For questions and suggestions</h3>
                     <div class="contact-item ">
