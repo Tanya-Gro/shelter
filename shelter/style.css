@@ -163,6 +163,8 @@ html {
     width: 207px;
     height: 52px;
     text-decoration: none;
+    /* padding: 15px 8%; */
+    text-align: center;
 }
 
 .start-screen-img {
@@ -443,7 +445,6 @@ html {
     border-radius: 100px;
     border: 0px;
 
-    padding: 15px 8%;
     font-family: "Georgia";
     font-size: 17px;
     line-height: 22.1px;
