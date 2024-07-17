@@ -91,6 +91,10 @@ html {
     align-items: center;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
 .logo {
     color: #F1CDB3;
     font-size: 32px;
@@ -152,12 +156,13 @@ html {
 .start-screen-content .p-l {
     margin-top: 42px;
     width: 460px;
+    padding-bottom: 42px;
 }
 
-.start-screen-content .button_primary {
-    margin: 42px 0px 42px;
+.pets-anchor .button_primary {
     width: 207px;
     height: 52px;
+    text-decoration: none;
 }
 
 .start-screen-img {
@@ -232,8 +237,12 @@ html {
     transition: 0.5s;
 }
 
-.pets .button_primary {
+.pets-link {
     margin: 60px auto 0px;
+
+}
+
+.pets-link .button_primary {
     width: 261px;
     height: 52px;
 
@@ -317,6 +326,10 @@ html {
     margin-right: 15px;
 }
 
+.credit-card-link {
+    text-decoration: none;
+}
+
 .credit-card-num {
     width: 275px;
     height: 23px;
@@ -340,25 +353,35 @@ html {
 }
 
 .contact-item {
-    width: 352px;
+    width: 353px;
     height: 32px;
     margin-top: 40px;
 }
 
-.contact-item img {
+.mail-to,
+.call-to {
+    text-decoration: none;
+    /* width: 353px; */
+    cursor: pointer;
+}
+
+.mail-to img {
     margin: 3px 20px 3px 0px;
 }
 
-.contact-item .h-4 {
+.mail-to .h-4 {
+    margin-top: 5px;
     text-align: left;
+    width: 191px;
 }
 
-.contact-item .phone {
+.call-to .phone {
     margin: 0px 20px 0px 0px;
 }
 
-.contact-item .h-4 {
+.call-to .h-4 {
     margin-top: 5px;
+    text-align: left;
 }
 
 /*****second box******/
@@ -368,9 +391,18 @@ html {
     margin: 0px 34px 31px 1px;
 }
 
+.location-maps {
+    text-decoration: none;
+    /* width: 353px; */
+    cursor: pointer;
+}
+
 .location-item-boston {
     width: 302px;
     height: 46px;
+    text-decoration: none;
+    /* width: 353px; */
+    cursor: pointer;
 }
 
 .location-item-boston img {
@@ -385,6 +417,8 @@ html {
     width: 302px;
     height: 32px;
     margin: 32px 0px 0px 0px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .location-item-boston img,
@@ -419,6 +453,7 @@ html {
 }
 
 .button_primary:hover {
+    cursor: pointer;
     background: #FDDCC4;
     transition: 0.4s;
 }
