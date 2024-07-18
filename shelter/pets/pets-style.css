@@ -48,12 +48,6 @@ html {
     justify-content: space-between;
 }
 
-.container,
-main,
-.center {
-    border: 1px solid green;
-}
-
 /******************** header ********************/
 .pets-header {
     width: 1200px;
