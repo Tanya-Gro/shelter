@@ -1,20 +1,13 @@
 @font-face {
     font-family: "Arial";
-    src: url("./assets/fonts/arial/arial-regular.ttf") format("truetype");
+    src: url("../assets/fonts/arial/arial-regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
-/* @font-face {
-    font-family: "Arial";
-    src: url("./assets/fonts/arial/arial-italic.ttf") format("truetype");
-    font-weight: 400;
-    font-style: italic;
-} */
-
 @font-face {
     font-family: "Georgia";
-    src: url("./assets/fonts/georgia/georgia-regular.ttf") format("truetype");
+    src: url("../assets/fonts/georgia/georgia-regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -68,16 +61,19 @@ html {
 
 .subtitle {
     margin-top: 10px;
+    margin-left: 4px;
 }
 
 .navigation-elem {
     width: 443px;
-    height: 27px;
+    height: 28px;
     list-style-type: none;
 }
 
 .navigation-item-pets {
-    border-bottom: 3px solid #F1CDB3;
+    height: 23px;
+    /* paddin/g-bottom: 1px; */
+    border-bottom: 2px solid #F1CDB3;
 }
 
 .navigation-item a {
@@ -106,17 +102,17 @@ html {
 }
 
 .friends-cards {
-    width: 1200px;
+    width: 1240px;
     height: 930px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    /* gap: 5px; */
 }
 
 .friend-card {
-    margin: 14px auto 14px;
+    margin: 14px auto;
     border-radius: 9px;
     width: 270px;
     height: 435px;
@@ -143,8 +139,7 @@ gap: 30px; */
 .button-group {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 95px;
+    margin-top: 34px;
 }
 
 /* -------------------------- footer ---------------------------------------*/
@@ -154,20 +149,22 @@ gap: 30px; */
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 40px auto 0px auto;
+    align-items: start;
+    margin: 40px auto 0px;
 }
 
 /*******first box*****/
-.main-footer-contacts .h-3 {
-    width: 279px;
-    height: 90px;
-    text-align: left;
-}
-
 .main-footer-contacts {
     width: 278px;
     height: 234px;
+    margin-top: 15px;
+}
+
+.main-footer-contacts .h-3 {
+    width: 279px;
+    height: 90px;
+    margin-top: 0px;
+    text-align: left;
 }
 
 .contact-item {
@@ -181,7 +178,7 @@ gap: 30px; */
 }
 
 .mail-to img {
-    margin: 3px 20px 3px 0px;
+    margin: 0px 20px 0px 0px;
 }
 
 .call-to .h-4,
@@ -199,6 +196,7 @@ gap: 30px; */
 .main-footer-location {
     width: 302px;
     height: 234px;
+    margin-top: 15px;
 }
 
 .main-footer-location .h-3 {
