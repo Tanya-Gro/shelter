@@ -48,7 +48,6 @@ html {
     justify-content: space-between;
 }
 
-header,
 .container,
 main,
 .center {
@@ -152,6 +151,110 @@ gap: 30px; */
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 95px;
+}
+
+/* -------------------------- footer ---------------------------------------*/
+.pets-footer {
+    width: 1200px;
+    height: 310px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto 0px auto;
+}
+
+/*******first box*****/
+.main-footer-contacts .h-3 {
+    width: 279px;
+    height: 90px;
+    text-align: left;
+}
+
+.main-footer-contacts {
+    width: 278px;
+    height: 234px;
+}
+
+.contact-item {
+    margin-top: 40px;
+}
+
+.mail-to,
+.call-to {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mail-to img {
+    margin: 3px 20px 3px 0px;
+}
+
+.call-to .h-4,
+.mail-to .h-4 {
+    margin-top: 5px;
+    text-align: left;
+    width: 191px;
+}
+
+.call-to .phone {
+    margin: 0px 20px 0px 0px;
+}
+
+/*****second box******/
+.main-footer-location {
+    width: 302px;
+    height: 234px;
+}
+
+.main-footer-location .h-3 {
+    width: 270px;
+    height: 90px;
+    text-align: left;
+}
+
+.location-maps {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.location-item-boston {
+    width: 302px;
+    height: 46px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 33px 0px 33px 0px;
+}
+
+.location-item-boston img {
+    margin-top: 6px;
+}
+
+.location-item-boston .h-4 {
+    text-align: left;
+}
+
+.location-item-london {
+    width: 302px;
+    height: 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.location-item-boston img,
+.location-item-london img {
+    width: 22px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.location-item-london .h-4 {
+    margin-top: 5px;
+}
+
+.main-footer-img {
+    width: 300px;
+    height: 310px;
 }
 
 /*---------------- button -----------------*/
@@ -266,10 +369,22 @@ gap: 30px; */
     background: #FAFAFA;
 }
 
+.bg-brown {
+    background-image: linear-gradient(135deg, #534135, #222021);
+}
+
 .color-dark-l {
     color: #545454;
 }
 
 .color-dark-3xl {
     color: #292929;
+}
+
+.color-white {
+    color: #FFFFFF;
+}
+
+.color-primary {
+    color: #F1CDB3;
 }
