@@ -122,6 +122,7 @@ html {
 }
 
 .navigation-item-about {
+    height: 21px;
     border-bottom: 2px solid #F1CDB3;
 }
 
@@ -130,7 +131,7 @@ html {
 }
 
 .navigation-item a:hover {
-    transition: 0.5s;
+    transition: 0.2s;
     border-bottom: 3px solid #F1CDB3;
     color: #FAFAFA;
 }
@@ -238,11 +239,13 @@ html {
 
 .slider-card {
     margin: 0px 45px;
+    cursor: pointer;
+    border-radius: 9px;
 }
 
 .slider-card:hover .slider-button {
     background: #FDDCC4;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .slider-img {
@@ -497,6 +500,7 @@ html {
     border-radius: 100px;
     border: 2px solid #F1CDB3;
     background: #f5f5f5;
+    cursor: pointer;
 }
 
 .round-button:hover {
@@ -569,15 +573,18 @@ html {
 
 /* -------------- colors -------------- */
 .bg-primary {
-    background: #F1CDB3;
+    /* background: #F1CDB3; */
+    background: #f2ceb3;
 }
 
 .color-primary {
-    color: #F1CDB3;
+    /* color: #F1CDB3; */
+    color: #f2ceb3;
 }
 
 .bg-brown {
-    background-image: linear-gradient(135deg, #534135, #222021);
+    /* background-image: linear-gradient(135deg, #534135, #222021); */
+    background: url("./assets/noise_transparent@2x.png"), linear-gradient(135deg, #534135, #222021);
 }
 
 .bg-light-s {
