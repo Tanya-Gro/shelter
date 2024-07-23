@@ -263,6 +263,8 @@ gap: 30px; */
     letter-spacing: 0.06em;
     text-align: center;
     color: #292929;
+
+    cursor: pointer;
 }
 
 .round-button {

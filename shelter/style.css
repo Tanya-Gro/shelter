@@ -491,6 +491,8 @@ html {
     letter-spacing: 0.06em;
     text-align: left;
     padding: 15px 15%;
+
+    cursor: pointer;
 }
 
 .round-button {
