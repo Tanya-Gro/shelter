@@ -82,7 +82,7 @@ html {
 
 .navigation-item a:hover {
     transition: 0.2s;
-    border-bottom: 3px solid #F1CDB3;
+    /* border-bottom: 3px solid #F1CDB3; */
     color: #292929;
 }
 
@@ -123,6 +123,13 @@ gap: 30px; */
 
 .friend-card:hover .friend-button {
     background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.4s;
+}
+
+.friend-card:hover {
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    background: #FFFFFF;
     transition: 0.4s;
 }
 
@@ -300,6 +307,7 @@ gap: 30px; */
 .on:hover {
     cursor: pointer;
     background: #FDDCC4;
+    border: 2px solid #FDDCC4;
     transition: 0.4s;
 }
 
