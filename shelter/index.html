@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="icon" href="./assets/favicon.ico">
 </head>
 
@@ -37,7 +38,7 @@
                 <!--  not only  -->
                 <div class="start-screen row">
                     <div class="coll start-screen-content ">
-                        <h2 class="h-2">Not only people need a house</h2>
+                        <h2 class="h-2">Not only people <br> need a house</h2>
 
                         <p class="p-l color-dark-s">We offer to give a chance to a little and nice puppy with an
                             extremely wide and
@@ -49,20 +50,20 @@
                         </form>
 
                     </div>
-                    <div class="start-screen-img">
-                        <img src="./assets/png/start-screen-puppy.png" alt="puppy">
-                    </div>
+                    <!-- <div> -->
+                    <img src="./assets/png/start-screen-puppy.png" alt="puppy" class="start-screen-img">
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
         <!--  about  -->
         <div class="about-container all-screen" id="about">
             <div class="about center row">
-                <div class="about-img">
-                    <img src="./assets/png/about-pets.png" alt="About pets">
-                </div>
+                <!-- <div class="about-img"> -->
+                <img src="./assets/png/about-pets.png" alt="About pets" class="about-img">
+                <!-- </div> -->
                 <div class="about-content">
-                    <h3 class="h-3  color-dark-l">About the shelter “Cozy House”</h3>
+                    <h3 class="h-3  color-dark-l">About the shelter<br>“Cozy House”</h3>
                     <p class="p-l color-dark-xl">Currently we have 121 dogs and 342 cats on our hands and statistics
                         show that only
                         20% of them will find a family. The others will continue to live with us and will be waiting for
@@ -83,8 +84,10 @@
                     <h3 class="h-3 color-dark-l">Our friends who<br>are looking for a house</h3>
                 </div>
                 <div class="pets-slider row">
-                    <div class="slider-round-button"><button class="round-button"><img class="round-buttom-img"
-                                src="./assets/png/Arrow.png" alt="Arrow"></button></div>
+                    <div class="slider-round-button left">
+                        <button class="round-button"><img class="round-buttom-img" src="./assets/png/Arrow.png"
+                                alt="Arrow"></button>
+                    </div>
 
                     <div class="slider-card coll bg-light-s">
                         <img class="slider-img" src="./assets/slider/pets-katrine.png" alt="katrine">
@@ -96,12 +99,13 @@
                         <p class="slider-p color-dark-l">Jennifer</p>
                         <button class="slider-button bg-light-s">Learn more</button>
                     </div>
-                    <div class="slider-card coll bg-light-s">
+                    <div class="slider-card coll bg-light-s last">
                         <img class="slider-img" src="./assets/slider/pets-woody.png" alt="woody">
                         <p class="slider-p  color-dark-l">Woody</p>
                         <button class="slider-button bg-light-s">Learn more</button>
                     </div>
-                    <div class="slider-round-button">
+
+                    <div class="slider-round-button right">
                         <button class="round-button"><img class="round-buttom-img rotate" src="./assets/png/Arrow.png"
                                 alt="Arrow"></button>
                     </div>
@@ -114,10 +118,8 @@
         <!--  help  -->
         <div class="help-container all-screen" id="help">
             <div class="help coll center">
-                <div class="help-header">
-                    <h3 class="h-3 color-dark-l">How you can help<br>
-                        our shelter</h3>
-                </div>
+                <h3 class="h-3 help-header color-dark-l">How you can help<br>
+                    our shelter</h3>
                 <div class="help-content">
                     <article class="help-card coll">
                         <img class="card-img" src="./assets/help-icons/Vector.png" alt="Pet food">
@@ -160,35 +162,34 @@
         </div>
         <!--  in addition  -->
         <div class="donatation-container all-screen bg-grey">
-            <div class="donatation center">
-                <article class="donatation-card row">
-                    <div class="donatation-img">
-                        <img src="./assets/png/donation-dog.png" alt="donation-dog">
+            <article class="donatation-card row center">
+                <!-- <div class="donatation-img">
+                    <img src="./assets/png/donation-dog.png" alt="donation-dog">
+                </div> -->
+                <img src="./assets/png/donation-dog.png" class="donatation-img" alt="donation-dog">
+                <div class="donatation-content">
+                    <h3 class="h-3 color-dark-l">You can also<br>make a donation</h3>
+                    <h5 class="h-5 color-dark-l">Name of the bank / Type of bank account</h5>
+                    <div class="credit-card bg-primary row">
+                        <img src="./assets/svg/credit-card.svg" alt="credit-card" class="credit-card-img">
+                        <a class="credit-card-link" href="#no-scroll">
+                            <h4 class="credit-card-num h-4 color-dark-l">8380 2880 8028 8791 7435</h4>
+                        </a>
                     </div>
-                    <div class="donatation-content">
-                        <h3 class="h-3 color-dark-l">You can also make a donation</h3>
-                        <h5 class="h-5 color-dark-l">Name of the bank / Type of bank account</h5>
-                        <div class="credit-card bg-primary row">
-                            <img src="./assets/svg/credit-card.svg" alt="credit-card" class="credit-card-img">
-                            <a class="credit-card-link" href="#no-scroll">
-                                <h4 class="credit-card-num h-4 color-dark-l">8380 2880 8028 8791 7435</h4>
-                            </a>
-                        </div>
-                        <p class="legal-inf p-s color-dark-m">Legal information and lorem ipsum dolor sit amet,
-                            consectetur
-                            adipiscing elit.
-                            Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor
-                            et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                    </div>
-                </article>
-            </div>
+                    <p class="legal-inf p-s color-dark-m">Legal information and lorem ipsum dolor sit amet,
+                        consectetur
+                        adipiscing elit.
+                        Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor
+                        et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                </div>
+            </article>
         </div>
         <!--  footer  -->
         <footer class="main-footer-container all-screen bg-brown" id="main-footer">
             <div class="main-footer center row">
 
                 <div class="main-footer-contacts coll">
-                    <h3 class="h-3 color-white">For questions and suggestions</h3>
+                    <h3 class="h-3 color-white">For questions<br>and suggestions</h3>
                     <div class="contact-item ">
                         <a class="row mail-to" href="mailto:email@shelter.com">
                             <img src="./assets/svg/icon-email.svg" alt="icon-email">
@@ -204,13 +205,13 @@
                 </div>
 
                 <div class="main-footer-location coll">
-                    <h3 class="h-3 color-white">We are waiting for your visit</h3>
+                    <h3 class="h-3 color-white">We are waiting<br>for your visit</h3>
 
                     <a class="location-item-boston row"
                         href="https://www.google.com/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585559,-71.0573012,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.358552!4d-71.0547263?entry=ttu"
                         target="_blank">
                         <img src="./assets/png/pin.png" alt="pin">
-                        <h4 class="h-4 color-primary">1 Central Street, Boston (entrance from the store)</h4>
+                        <h4 class="h-4 color-primary">1 Central Street, Boston<br>(entrance from the store)</h4>
                     </a>
 
                     <a class="location-item-london row"
@@ -225,7 +226,7 @@
             </div>
         </footer>
     </div>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
