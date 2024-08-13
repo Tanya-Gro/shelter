@@ -93,6 +93,10 @@ html {
     letter-spacing: 0.1em;
 }
 
+.burger {
+    display: none;
+}
+
 .navigation {
     /* width: 37%; */
     width: 443px;
@@ -118,7 +122,7 @@ html {
 
 /*------------------------------------ Not only ---------------------------------------*/
 .start-screen {
-    margin: 60px 40px 0px 40px;
+    margin: 57px 40px 0px 40px;
 }
 
 .start-screen-content {
@@ -236,7 +240,7 @@ html {
 }
 
 .pets-button-link {
-    margin: 60px auto 0px;
+    margin: 57px auto 0px;
 }
 
 .pets-button-link .button_primary {
@@ -254,7 +258,7 @@ html {
 }
 
 .help .h-3 {
-    margin-bottom: 60px;
+    margin-bottom: 56px;
     text-align: center;
     padding: 2px auto;
 }
@@ -265,17 +269,17 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 55px 119px;
+    gap: 50px 119px;
 }
 
 .help-card {
-    height: 113px;
+    /* height: 113px; */
     justify-content: space-between;
     padding: 0 0;
 }
 
 .card-img {
-    margin: 0 auto;
+    margin: 0 auto 34px;
 }
 
 .help-card .h-4 {
@@ -339,12 +343,14 @@ html {
 .main-footer {
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /*******first box*****/
 .main-footer-contacts {
     margin-left: 40px;
     /* width: 21.75%; */
+    min-width: 278px;
 }
 
 .contact-item {
@@ -377,6 +383,7 @@ html {
 /*****second box******/
 .main-footer-location {
     width: 23.75%;
+    min-width: 278px;
 }
 
 .location-item-boston,
@@ -411,6 +418,7 @@ html {
 
 .main-footer-img {
     margin: 40px 40px 0px 0px;
+    min-width: 260px;
 }
 
 /* ---------------- buttons -----------*/
@@ -582,18 +590,22 @@ html {
 }
 
 /************************* MEDIA ******************************/
+/************************* 768 ********************************/
 @media (max-width : 768px) {
+
+    /******** not only ********/
     .main-header {
-        margin: 30px 30px;
+        margin: 30px 4%;
     }
 
     .start-screen {
+        margin: 0px 5.2%;
         flex-direction: column;
-        margin-top: 0;
     }
 
     .start-screen-content {
         width: 67%;
+        min-width: 300px;
         margin: 30px auto;
     }
 
@@ -602,14 +614,15 @@ html {
     }
 
     .pets-anchor .button_primary {
-        margin-left: 27.5%;
+        margin-left: calc(50% - 103px);
     }
 
     .start-screen-img {
-        margin: 69px auto 0px 130px;
+        margin: 69px 0px 0px auto;
         width: 82.75%;
     }
 
+    /******** about ********/
     .about {
         flex-direction: column;
         padding-bottom: 100px;
@@ -631,6 +644,7 @@ html {
         margin: 0 auto;
     }
 
+    /******** our friends ********/
     .pets-slider .last {
         display: none;
     }
@@ -660,17 +674,20 @@ html {
         margin: 56px auto 0px;
     }
 
+    /******** help ********/
     .help {
         /* width: 100%; */
-        padding: 80px 69px 100px 69px;
+        padding: 80px 9% 100px 9%;
     }
 
 
     .help-content {
-        justify-content: space-between;
-        gap: 55px 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
     }
 
+    /******** donatation ********/
     .donatation-card {
         flex-direction: column;
         padding: 80px 132px 100px 132px;
@@ -693,6 +710,7 @@ html {
         margin: 0px 0px;
     }
 
+    /******** footer ********/
     .main-footer {
         flex-wrap: wrap;
         padding: 30px 34px 0px 34px;
@@ -715,4 +733,111 @@ html {
     .main-footer-img {
         margin: 65px auto 0px auto;
     }
+}
+
+/******************************** 767 *****************************/
+@media (max-width : 767px) {
+    .navigation {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 22px;
+    }
+
+    .burger:before,
+    .burger:after,
+    .burger span {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #F1CDB3;
+    }
+
+    .burger span {
+        top: 9px;
+    }
+
+    .burger:before {
+        top: 0;
+    }
+
+    .burger:after {
+        bottom: 0;
+    }
+
+    .main-footer-img {
+        width: 260px;
+        height: 269px;
+    }
+}
+
+/****************************** 530 ******************************/
+@media (max-width : 530px) {
+    .help-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 32px;
+    }
+
+    .h-4 {
+        font-size: 15px;
+        line-height: 16.5px;
+        letter-spacing: 0.06em;
+    }
+
+    .card-img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-bottom: 20px;
+    }
+}
+
+/****************************** 320 ******************************/
+@media (max-width : 320px) {
+
+    .main-header {
+        margin: 30px 6%;
+    }
+
+    /******** not only ********/
+    .start-screen {
+        margin: 0px 0px;
+    }
+
+    .h-2 {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+
+    .p-l {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    /********** about *********/
+    .h-3 {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+    }
+
+    /******** not only ********/
+    .pre-last {
+        display: none;
+    }
+
+    /********** help **********/
+    .help {
+        /* width: 100%; */
+        padding: 80px 15px 100px 15px;
+    }
+
+    /******** donatation ********/
+    /********* footer *********/
 }
