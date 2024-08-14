@@ -97,7 +97,7 @@ html {
 }
 
 .friends-cards {
-    margin: 20px auto;
+    margin: 18px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1px 40px;
@@ -124,8 +124,6 @@ html {
 }
 
 .slider-img {
-    /* width: 270px;
-    height: 270px; */
     border-radius: 9px;
 }
 
@@ -136,26 +134,22 @@ html {
 .button-group {
     display: flex;
     justify-content: center;
-    margin-top: 16px;
+    margin-top: 20px;
     margin-bottom: 90px;
 }
 
 /* -------------------------- footer ---------------------------------------*/
 .pets-footer {
-    /* width: 1200px;
-    height: 310px; */
-
-    display: flex;
     justify-content: space-between;
-    align-items: start;
+    flex-wrap: wrap;
+    /* align-items: center; */
     margin: 40px 40px 0px 40px;
 }
 
 /*******first box*****/
 .main-footer-contacts {
     width: 278px;
-    height: 234px;
-    margin-top: 15px;
+    margin-top: 17px;
 }
 
 .main-footer-contacts .h-3 {
@@ -183,7 +177,6 @@ html {
 .mail-to .h-4 {
     margin-top: 5px;
     text-align: left;
-    width: 191px;
 }
 
 .call-to .phone {
@@ -193,12 +186,11 @@ html {
 /*****second box******/
 .main-footer-location {
     width: 302px;
-    height: 234px;
-    margin-top: 15px;
+    margin-top: 17px;
 }
 
 .main-footer-location .h-3 {
-    width: 270px;
+    /* width: 270px;*/
     height: 90px;
     text-align: left;
 }
@@ -243,8 +235,7 @@ html {
 }
 
 .main-footer-img {
-    width: 300px;
-    height: 310px;
+    min-width: 260px;
 }
 
 /*---------------- button -----------------*/
@@ -275,11 +266,6 @@ html {
     background: #F1CDB3;
     color: #292929;
 }
-
-/* .round-button:hover {
-        background: #FDDCC4;
-        transition: 0.4s;
-    } */
 
 .off {
     border: 2px solid #CDCDCD;
@@ -371,7 +357,6 @@ html {
 }
 
 .bg-brown {
-    /* background-image: linear-gradient(135deg, #534135, #222021); */
     background: url("../assets/noise_transparent@2x.png"), linear-gradient(135deg, #534135, #222021);
 }
 
@@ -392,6 +377,70 @@ html {
 }
 
 /************************* MEDIA ******************************/
+/************************* 1279 ********************************/
+@media (max-width : 1279px) {
+
+    /******** our friends ********/
+    .friends-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .last {
+        display: none;
+    }
+
+    .button-group {
+        margin-top: 0px;
+        margin-bottom: 64px;
+    }
+}
+
+/************************* 950 ********************************/
+@media (max-width : 950px) {
+
+    /******** our friends ********/
+    .friends-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/************************* 768 ********************************/
+@media (max-width : 768px) {
+
+    /******** header ********/
+    .pets-header {
+        margin: 28px 4%;
+    }
+
+    /******** our friends ********/
+    .friends-header {
+        margin-bottom: 0px;
+    }
+
+    /******** footer ********/
+    .pets-footer {
+        margin: 30px 35px 0px 35px;
+    }
+
+    .main-footer-contacts {
+        margin: 0 30px;
+        width: 39.8%;
+    }
+
+    .main-footer-location {
+        margin: 0 30px;
+        width: 43%;
+    }
+
+    .call-to .h-4 {
+        margin-top: 4px;
+    }
+
+    .main-footer-img {
+        margin: 65px auto 0px auto;
+    }
+}
+
 /******************************** 767 *****************************/
 @media (max-width : 767px) {
     .navigation {

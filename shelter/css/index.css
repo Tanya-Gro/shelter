@@ -604,13 +604,11 @@ html {
     .pets-slider .left {
         margin-left: 30px;
         margin-right: 0;
-        /* padding-left: 33%; */
     }
 
     .pets-slider .right {
         margin-right: 30px;
         margin-left: 0;
-        /* padding-left: 33%; */
     }
 
     .round-buttom-img {
@@ -713,7 +711,6 @@ html {
 
     /******** footer ********/
     .main-footer {
-        /* flex-wrap: wrap; */
         padding: 30px 34px 0px 34px;
     }
 
