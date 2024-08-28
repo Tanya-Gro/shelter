@@ -1,3 +1,22 @@
+const burger = document.querySelector('.burger');
+const navigation = document.querySelector('.navigation');
+const body = document.querySelector('body');
+
+burger.addEventListener("click", () => burgerClick()
+);
+
+navigation.addEventListener("click", (event) => {
+    console.log(event.target.classList.value);
+    if (event.target.classList.value === 'navigation active' || event.target.classList.value === 'p-l color-dark-l' || event.target.classList.value === 'p-l color-dark-3xl') burgerClick();
+});
+
+const burgerClick = () => {
+    navigation.classList.toggle('active');
+    burger.classList.toggle('active');
+    body.classList.toggle('active');
+}
+
+
 console.log("Вёрстка страницы Pets соответствует макету при ширине экрана 1280px: +6");
 console.log("блок < header >: +2");
 console.log("блок Our Friends: +2");

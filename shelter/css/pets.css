@@ -450,8 +450,71 @@ html {
 
 /******************************** 767 *****************************/
 @media (max-width : 767px) {
+    body.active {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .navigation.active {
+        right: 0;
+    }
+
+    .burger.active {
+        transform: rotate(90deg);
+        transition: all 0.3s;
+        position: fixed;
+        right: 30px;
+    }
+
     .navigation {
-        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        right: -100%;
+        top: 0;
+        transition: right 0.4s ease 0.1s;
+        background-color: rgba(41, 41, 41, 0.6);
+
+        overflow: auto;
+    }
+
+    .navigation-elem {
+        width: 320px;
+        height: 100%;
+        min-height: 460px;
+        background: rgba(41, 41, 41, 1);
+        margin-right: 0;
+        margin-left: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation-item-pets p,
+    .navigation-item a {
+        font-size: 32px;
+        line-height: 51.2px;
+        color: #CDCDCD;
+    }
+
+    .navigation-item-pets p {
+        text-align: center;
+        color: #FAFAFA;
+    }
+
+    .navigation-item-pets {
+        width: 130px;
+        margin: 20px 0;
+    }
+
+    .navigation-item {
+        margin: 20px 0;
+    }
+
+    .navigation-item a:hover {
+        transition: 0.2s;
+        color: rgba(250, 250, 250, 1);
+        ;
     }
 
     .burger {
@@ -459,6 +522,8 @@ html {
         position: relative;
         width: 30px;
         height: 22px;
+        cursor: pointer;
+        z-index: 5;
     }
 
     .burger:before,
