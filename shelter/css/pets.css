@@ -627,3 +627,67 @@ html {
         margin: 28px 6%;
     }
 }
+
+/****************************** popUp ******************************/
+.popUp_container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    padding: auto 0;
+    background: rgba(41, 41, 41, 0.6);
+    overflow: auto;
+}
+
+.popUp_container.active {
+    left: 0;
+}
+
+.popUp {
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    border-radius: 9px;
+    background: #FAFAFA;
+
+    width: 900px;
+    height: 500px;
+
+    padding-top: 50px;
+    margin: 0 auto;
+    margin-top: max(50vh - 250px, 52px);
+}
+
+.pooUp_close {
+    position: relative;
+    bottom: 110px;
+    left: 50px;
+    /* width: 52px; */
+    background: rgba(122, 122, 122, 0.6);
+    z-index: 6;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.popUp_content {
+    width: 100%;
+    height: 100%;
+    margin-left: 30px;
+}
+
+.popUp_subtitle {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.popUp_text {
+    margin: 40px 0;
+}
+
+.popUo_description li {
+    color: #F1CDB3;
+    line-height: 25px;
+}
+
+.popUo_description li span {
+    color: #000000;
+}
