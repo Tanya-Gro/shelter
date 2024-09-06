@@ -185,7 +185,8 @@ body.active {
 
 /* --------------------------our friend ---------------------------------------*/
 .pets {
-    width: 100%;
+    max-width: 100%;
+    padding: 0 35px;
 }
 
 .pets-header {
@@ -203,7 +204,7 @@ body.active {
 }
 
 .slider-round-button {
-    width: 52px;
+    min-width: 52px;
     height: 52px;
     margin-left: 5px;
     margin-right: 5px;
@@ -219,8 +220,22 @@ body.active {
     transform: rotate(180deg);
 }
 
+.slider_wrapper {
+    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 0;
+    width: 100%;
+    padding: 0 33px;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    left: -985px;
+    gap: 70px;
+}
+
 .slider-card {
-    margin: 0px 3.5%;
     cursor: pointer;
     border-radius: 9px;
     min-width: 270px;
@@ -457,10 +472,10 @@ body.active {
 }
 
 .slider-button {
-    margin: 30px auto;
-    width: 70%;
-    /* height: 52px; */
-    padding: 15px 45px 15px 45px;
+    margin: 29px auto;
+    width: 68%;
+    height: 52px;
+    /* padding: 15px 45px 15px 45px; */
     border-radius: 100px;
     border: 2px solid #F1CDB3;
 
@@ -469,7 +484,7 @@ body.active {
     line-height: 22.1px;
     letter-spacing: 0.06em;
     text-align: left;
-    padding: 15px 15%;
+    padding: 13px 15%;
 
     cursor: pointer;
 }
@@ -1059,11 +1074,12 @@ body.active {
 
 .pooUp_close {
     position: relative;
-    bottom: 285px;
-    left: 40px;
-    width: 52px;
+    bottom: 287px;
+    left: 47px;
+    /* width: 52px; */
     background: rgba(122, 122, 122, 0.6);
     z-index: 6;
+    padding: 16px;
     /* left: 52px; */
 }
 
