@@ -93,7 +93,7 @@ const burger = document.querySelector('.burger');
 const navigation = document.querySelector('.navigation');
 const body = document.querySelector('body');
 const popUp_container = document.querySelector('.popUp_container');
-const pooUp_close = document.querySelector('.pooUp_close');
+const popUp_close = document.querySelector('.popUp_close');
 const slider = document.querySelector('.slider');
 
 /********************************************************************************* */
@@ -154,15 +154,13 @@ for (let i = 0; i < slider_card.length; i++) {
     slider_card[i].addEventListener('click', (event) => {
         popUp_container.classList.add('active');
         body.classList.add('active');
-        // console.log(event.target.tagName === 'DIV' ? event.target.children[1].textContent : event.target.parentNode.children[1].textContent);
-
         generatePopUp(event.target.tagName === 'DIV' ? event.target.children[1].textContent : event.target.parentNode.children[1].textContent);
     });
 }
 
 popUp_container.addEventListener('click', (event) => {
     // console.log(event);
-    if (event.target.className.includes('popUp_container') || event.target.className.includes('pooUp_close')) {
+    if (event.target.className.includes('popUp_container') || event.target.className.includes('popUp_close')) {
         popUp_container.classList.remove('active');
         body.classList.remove('active');
     }
@@ -177,11 +175,11 @@ const generatePopUp = (petsName) => {
     document.querySelector('.popUp_title').textContent = petsCard.name;
     document.querySelector('.popUp_subtitle').textContent = `${petsCard.type} - ${petsCard.breed}`;
     document.querySelector('.popUp_text').textContent = petsCard.description;
-    document.querySelector('.popUo_description').innerHTML = `
-    <li class="h-5"><span><b>Age:</b> ${petsCard.age}<span></li> 
-    <li class="h-5"><span><b>Inoculations:</b> ${petsCard.inoculations.join(',') || 'none'}<span></li> 
-    <li class="h-5"><span><b>Diseases:</b> ${petsCard.diseases.join(',') ? petsCard.diseases.join(',') : 'none'}<span></li> 
-    <li class="h-5"><span><b>Parasides:</b> ${petsCard.parasites.join(',') ? petsCard.parasites.join(',') : 'none'}<span></li>`;
+    document.querySelector('.popUp_description').innerHTML = `
+    <li class="h-5"><span><b>Age:</b> ${petsCard.age}</span></li> 
+    <li class="h-5"><span><b>Inoculations:</b> ${petsCard.inoculations.join(', ') || 'none'}</span></li> 
+    <li class="h-5"><span><b>Diseases:</b> ${petsCard.diseases.join(', ') ? petsCard.diseases.join(', ') : 'none'}</span></li> 
+    <li class="h-5"><span><b>Parasites:</b> ${petsCard.parasites.join(', ') ? petsCard.parasites.join(', ') : 'none'}</span></li>`;
 }
 
 
