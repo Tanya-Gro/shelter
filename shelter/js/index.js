@@ -104,13 +104,30 @@ let item = [];
 let randomNum = 0;
 let flag = 1;
 
-const generateCard = (petsName, path) => {
+const generateCard = (petsName, path, direction) => {
     const slider_card = document.createElement('div');
     slider_card.classList.add("slider-card", "coll", "bg-light-s");
     slider_card.innerHTML = `<img class="slider-img" src="${path}" alt="${petsName}">
                         <p class="slider-p color-dark-l">${petsName}</p>
                         <button class="slider-button bg-light-s">Learn more</button>`;
-    slider.appendChild(slider_card);
+    if (direction === 'start') {
+        slider.prepend(slider_card);
+    }
+    else {
+        slider.appendChild(slider_card);
+    }
+    slider_card.addEventListener('click', (event) => {
+        popUp_container.classList.add('active');
+        body.classList.add('active');
+        generatePopUp(event.target.tagName === 'DIV' ? event.target.children[1].textContent : event.target.parentNode.children[1].textContent);
+    });
+}
+
+const deleteSlider = position => {
+    const cardSet = document.querySelectorAll('.slider-card');
+    if (position === 'end') cardSet[8].remove();
+    else cardSet[0].remove();
+
 }
 
 for (let i = 0; i < 8; i++) {
@@ -129,8 +146,8 @@ for (let i = 0; i < 8; i++) {
 item.push(item[0]);
 generateCard(petsInformation[item[0]].name, petsInformation[item[0]].img);
 
-// console.log(item);
 let generateLeftSet, generateRightSet = false;
+
 const moveLeft = () => {
     // btn_left.classList.add('btn-disable');
     slider.classList.add('transition-left');
@@ -143,23 +160,79 @@ const moveRight = () => {
     generateRightSet = true;
 }
 
+/***  get new per`s id ***/
+const generateNewItem = exeptItems => {
+    flag = 1;
+    while (flag === 1) {
+        randomNum = Math.floor(Math.random() * 8);
+        if (!exeptItems.includes(randomNum) && randomNum !== 8) {
+            flag = 0;
+            return randomNum;
+        }
+    }
+}
+
+const refreshSlider = moveDirection => {
+    console.log('старый набор: ', item);
+    let newCentralItems = [];
+    let movedItems = [];
+    let newRandomItems = [];
+
+    if (moveDirection === 'left') {
+        for (let i = 0; i < 3; i++) {
+            newCentralItems.push(item[i]);
+            movedItems.push(item[i + 3]);
+        }
+        for (let i = 0; i < 3; i++) {
+            newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+        };
+        // console.log(newCentralItems, movedItems, newRandomItems);
+        for (let i = 0; i < 3; i++) {
+            item[i] = newRandomItems[i];
+            deleteSlider('end');
+            generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'start');
+            item[i + 3] = newCentralItems[i];
+            item[i + 6] = movedItems[i];
+        }
+        console.log('новый набор: ', item);
+    }
+    else {
+        for (let i = 0; i < 3; i++) {
+            newCentralItems.push(item[i + 6]);
+            movedItems.push(item[i + 3]);
+        }
+        for (let i = 0; i < 3; i++) {
+            newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+        };
+        // console.log(newCentralItems, movedItems, newRandomItems);
+        for (let i = 0; i < 3; i++) {
+            item[i] = movedItems[i];
+            item[i + 3] = newCentralItems[i];
+            item[i + 6] = newRandomItems[i];
+            deleteSlider('start');
+            generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'end');
+        }
+        console.log('новый набор: ', item);
+    }
+};
+
 btn_left.addEventListener('click', moveLeft);
 btn_right.addEventListener('click', moveRight);
 
 slider.addEventListener('animationend', () => {
     if (generateLeftSet) {
+        refreshSlider('left');
         slider.classList.remove('transition-left');
         btn_left.addEventListener('click', moveLeft);
         generateLeftSet = false;
     }
     else {
         // if (generateRightSet) 
+        refreshSlider('right');
         slider.classList.remove('transition-right');
         btn_right.addEventListener('click', moveRight);
         generateRightSet = false;
     }
-    // btn_right.classList.remove('btn-disable');
-    // btn_left.classList.remove('btn-disable');
 })
 
 /*************************************************************************** */
@@ -183,14 +256,14 @@ const burgerClick = () => {
 
 /*************************************************************************** */
 /************************************* pop up ********************************/
-const slider_card = document.querySelectorAll('.slider-card');
-for (let i = 0; i < slider_card.length; i++) {
-    slider_card[i].addEventListener('click', (event) => {
-        popUp_container.classList.add('active');
-        body.classList.add('active');
-        generatePopUp(event.target.tagName === 'DIV' ? event.target.children[1].textContent : event.target.parentNode.children[1].textContent);
-    });
-}
+// const slider_card = document.querySelectorAll('.slider-card');
+// for (let i = 0; i < slider_card.length; i++) {
+//     slider_card[i].addEventListener('click', (event) => {
+//         popUp_container.classList.add('active');
+//         body.classList.add('active');
+//         generatePopUp(event.target.tagName === 'DIV' ? event.target.children[1].textContent : event.target.parentNode.children[1].textContent);
+//     });
+// }
 
 popUp_container.addEventListener('click', (event) => {
     // console.log(event);
@@ -220,8 +293,8 @@ const generatePopUp = (petsName) => {
 /********************************************************************************* */
 /************************************ myself check ******************************* */
 console.log("Реализация burger menu на обеих страницах: +26");
-// console.log("Реализация слайдера-карусели на странице Main: +36");
+console.log("Реализация слайдера-карусели на странице Main: +36");
 // console.log("Реализация пагинации на странице Pets: +36");
 console.log("Реализация попап на обеих страницах: +12");
 
-console.log("ИТОГО 38 балла");
+console.log("ИТОГО 74 балла");
