@@ -95,6 +95,8 @@ const body = document.querySelector('body');
 const popUp_container = document.querySelector('.popUp_container');
 const popUp_close = document.querySelector('.popUp_close');
 const slider = document.querySelector('.slider');
+const btn_left = document.querySelector('.left');
+const btn_right = document.querySelector('.right');
 
 /********************************************************************************* */
 /************************************ slider ************************************* */
@@ -126,7 +128,39 @@ for (let i = 0; i < 8; i++) {
 
 item.push(item[0]);
 generateCard(petsInformation[item[0]].name, petsInformation[item[0]].img);
+
 // console.log(item);
+let generateLeftSet, generateRightSet = false;
+const moveLeft = () => {
+    // btn_left.classList.add('btn-disable');
+    slider.classList.add('transition-left');
+    btn_left.removeEventListener('click', moveLeft);
+    generateLeftSet = true;
+}
+const moveRight = () => {
+    slider.classList.add('transition-right');
+    btn_right.removeEventListener('click', moveRight);
+    generateRightSet = true;
+}
+
+btn_left.addEventListener('click', moveLeft);
+btn_right.addEventListener('click', moveRight);
+
+slider.addEventListener('animationend', () => {
+    if (generateLeftSet) {
+        slider.classList.remove('transition-left');
+        btn_left.addEventListener('click', moveLeft);
+        generateLeftSet = false;
+    }
+    else {
+        // if (generateRightSet) 
+        slider.classList.remove('transition-right');
+        btn_right.addEventListener('click', moveRight);
+        generateRightSet = false;
+    }
+    // btn_right.classList.remove('btn-disable');
+    // btn_left.classList.remove('btn-disable');
+})
 
 /*************************************************************************** */
 /************************************* burger ********************************/
@@ -185,34 +219,9 @@ const generatePopUp = (petsName) => {
 
 /********************************************************************************* */
 /************************************ myself check ******************************* */
-// console.log("Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14");
-// console.log("блок < header >: +2");
-// console.log("блок Not only: +2");
-// console.log("блок About: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок Help: +2");
-// console.log("блок In addition: +2");
-// console.log("блок < footer >: +2");
-// console.log("Вёрстка страницы Main соответствует макету при ширине экрана 768px: +14");
-// console.log("блок < header >: +2");
-// console.log("блок Not only: +2");
-// console.log("блок About: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок Help: +2");
-// console.log("блок In addition: +2");
-// console.log("блок < footer >: +2");
-// console.log("Вёрстка страницы Main соответствует макету при ширине экрана 320px: +14");
-// console.log("блок < header >: +2");
-// console.log("блок Not only: +2");
-// console.log("блок About: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок Help: +2");
-// console.log("блок In addition: +2");
-// console.log("блок < footer >: +2");
-// console.log("Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки, справа от отдельных блоков не появляются белые поля.Весь контент страницы при этом сохраняется: не обрезается и не удаляется: +20");
-// console.log("нет полосы прокрутки при ширине страницы Main от 1280рх до 768рх: +5");
-// console.log("нет полосы прокрутки при ширине страницы Main от 768рх до 320рх: +5");
-// console.log("Верстка резиновая: при плавном изменении размера экрана от 1280px до 320px верстка подстраивается под этот размер, элементы верстки меняют свои размеры и расположение, не наезжают друг на друга, изображения могут менять размер, но сохраняют правильные пропорции(Примеры неправильной и правильной реализации): +8");
-// console.log("на странице Main: +4");
+console.log("Реализация burger menu на обеих страницах: +26");
+// console.log("Реализация слайдера-карусели на странице Main: +36");
+// console.log("Реализация пагинации на странице Pets: +36");
+console.log("Реализация попап на обеих страницах: +12");
 
-// console.log("ИТОГО 62 балла");
+console.log("ИТОГО 38 балла");

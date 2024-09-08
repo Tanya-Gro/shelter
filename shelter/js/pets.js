@@ -95,6 +95,8 @@ const body = document.querySelector('body');
 const popUp_container = document.querySelector('.popUp_container');
 const popUp_close = document.querySelector('.popUp_close');
 
+/*************************************************************************** */
+/************************************* burger ********************************/
 burger.addEventListener("click", () => burgerClick()
 );
 
@@ -143,27 +145,3 @@ const generatePopUp = (petsName) => {
     <li class="h-5"><span><b>Diseases:</b> ${petsCard.diseases.join(', ') ? petsCard.diseases.join(', ') : 'none'}</span></li> 
     <li class="h-5"><span><b>Parasites:</b> ${petsCard.parasites.join(', ') ? petsCard.parasites.join(', ') : 'none'}</span></li>`;
 }
-
-
-// console.log("Вёрстка страницы Pets соответствует макету при ширине экрана 1280px: +6");
-// console.log("блок < header >: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок < footer >: +2");
-
-// console.log("Вёрстка страницы Pets соответствует макету при ширине экрана 768px: +6");
-// console.log("блок < header >: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок < footer >: +2");
-
-// console.log("Вёрстка страницы Pets соответствует макету при ширине экрана 320px: +6");
-// console.log("блок < header >: +2");
-// console.log("блок Our Friends: +2");
-// console.log("блок < footer >: +2");
-
-// console.log("Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки, справа от отдельных блоков не появляются белые поля.Весь контент страницы при этом сохраняется: не обрезается и не удаляется: +20");
-// console.log("нет полосы прокрутки при ширине страницы Pets от 1280рх до 768рх: +5");
-// console.log("нет полосы прокрутки при ширине страницы Pets от 768рх до 320рх: +5");
-// console.log("Верстка резиновая: при плавном изменении размера экрана от 1280px до 320px верстка подстраивается под этот размер, элементы верстки меняют свои размеры и расположение, не наезжают друг на друга, изображения могут менять размер, но сохраняют правильные пропорции(Примеры неправильной и правильной реализации): +8");
-// console.log("на странице Pets: +4");
-
-// console.log("ИТОГО 38 баллов");
