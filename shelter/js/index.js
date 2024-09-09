@@ -173,7 +173,7 @@ const generateNewItem = exeptItems => {
 }
 
 const refreshSlider = moveDirection => {
-    console.log('старый набор: ', item);
+    // console.log('старый набор: ', item);
     let newCentralItems = [];
     let movedItems = [];
     let newRandomItems = [];
@@ -194,7 +194,7 @@ const refreshSlider = moveDirection => {
             item[i + 3] = newCentralItems[i];
             item[i + 6] = movedItems[i];
         }
-        console.log('новый набор: ', item);
+        // console.log('новый набор: ', item);
     }
     else {
         for (let i = 0; i < 3; i++) {
@@ -212,7 +212,7 @@ const refreshSlider = moveDirection => {
             deleteSlider('start');
             generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'end');
         }
-        console.log('новый набор: ', item);
+        // console.log('новый набор: ', item);
     }
 };
 
