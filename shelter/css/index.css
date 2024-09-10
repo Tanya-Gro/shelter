@@ -224,6 +224,8 @@ body.active {
 .slider_wrapper {
     justify-content: space-between;
     max-width: 950px;
+    min-width: 950px;
+
     margin: 0 0;
     width: 100%;
     /* padding: 0 33px; */
@@ -287,7 +289,7 @@ body.active {
 
 .transition-left {
     animation-name: move-left;
-    animation-duration: 3s;
+    animation-duration: 2s;
 }
 
 @keyframes move-right {
@@ -302,7 +304,7 @@ body.active {
 
 .transition-right {
     animation-name: move-right;
-    animation-duration: 3s;
+    animation-duration: 2s;
 }
 
 /*************************slider 1130 ********************************/
@@ -311,6 +313,7 @@ body.active {
 
     .slider_wrapper {
         max-width: 580px;
+        min-width: 580px;
     }
 
     .slider {
@@ -354,7 +357,7 @@ body.active {
         }
 
         to {
-            left: -580px;
+            left: -620px;
         }
     }
 
@@ -364,7 +367,7 @@ body.active {
         }
 
         to {
-            left: -1280px;
+            left: -1240px;
         }
     }
 }

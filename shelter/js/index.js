@@ -97,6 +97,8 @@ const popUp_close = document.querySelector('.popUp_close');
 const slider = document.querySelector('.slider');
 const btn_left = document.querySelector('.left');
 const btn_right = document.querySelector('.right');
+const slider_wrapper = document.querySelector('.slider_wrapper');
+// const cardSet = document.querySelectorAll('.slider-card');
 
 /********************************************************************************* */
 /************************************ slider ************************************* */
@@ -104,18 +106,20 @@ let item = [];
 let randomNum = 0;
 let flag = 1;
 
-const generateCard = (petsName, path, direction) => {
+const generateCard = (petsName, path, direction = 'end') => {
     const slider_card = document.createElement('div');
     slider_card.classList.add("slider-card", "coll", "bg-light-s");
     slider_card.innerHTML = `<img class="slider-img" src="${path}" alt="${petsName}">
                         <p class="slider-p color-dark-l">${petsName}</p>
                         <button class="slider-button bg-light-s">Learn more</button>`;
-    if (direction === 'start') {
-        slider.prepend(slider_card);
-    }
-    else {
-        slider.appendChild(slider_card);
-    }
+    // if (direction === 'start') slider.prepend(slider_card);
+    // else if (direction === '1') slider.before(slider_card);
+    // else slider.appendChild(slider_card);
+    // console.log(direction);
+    if (direction === 'start') slider.prepend(slider_card);
+    else if (direction === 'end') slider.appendChild(slider_card);
+    else slider.querySelectorAll('.slider-card')[+direction].before(slider_card);
+
     slider_card.addEventListener('click', (event) => {
         popUp_container.classList.add('active');
         body.classList.add('active');
@@ -124,12 +128,13 @@ const generateCard = (petsName, path, direction) => {
 }
 
 const deleteSlider = position => {
-    const cardSet = document.querySelectorAll('.slider-card');
+    let cardSet = document.querySelectorAll('.slider-card');
     if (position === 'end') cardSet[8].remove();
     else cardSet[0].remove();
-
+    // else { console.log('удаляем с начала'); cardSet[0].remove(); console.log(cardSet[0], cardSet.length); }
 }
 
+/************ enter cards ******/
 for (let i = 0; i < 8; i++) {
     flag = 1;
     while (flag === 1) {
@@ -142,7 +147,6 @@ for (let i = 0; i < 8; i++) {
         }
     }
 }
-
 item.push(item[0]);
 generateCard(petsInformation[item[0]].name, petsInformation[item[0]].img);
 
@@ -172,49 +176,117 @@ const generateNewItem = exeptItems => {
     }
 }
 
+// /**** Галя, замена! ****/
+// const changeSlides = (oldItem, newItem) => {
+//     let cardSet = document.querySelectorAll('.slider-card');
+//     console.log(cardSet);
+//     cardSet[+oldItem].querySelector('.slider-img').setAttribute('src', petsInformation[+newItem].img);
+//     cardSet[+oldItem].querySelector('.slider-img').setAttribute('alt', petsInformation[+newItem].name);
+//     cardSet[+oldItem].querySelector('.slider-p').innerText = petsInformation[+newItem].name;
+//     item[+oldItem] = +newItem;
+// };
+
 const refreshSlider = moveDirection => {
     // console.log('старый набор: ', item);
     let newCentralItems = [];
     let movedItems = [];
     let newRandomItems = [];
+    let amountSlides = 0;
 
-    if (moveDirection === 'left') {
-        for (let i = 0; i < 3; i++) {
-            newCentralItems.push(item[i]);
-            movedItems.push(item[i + 3]);
-        }
-        for (let i = 0; i < 3; i++) {
-            newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
-        };
-        // console.log(newCentralItems, movedItems, newRandomItems);
-        for (let i = 0; i < 3; i++) {
-            item[i] = newRandomItems[i];
-            deleteSlider('end');
-            generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'start');
-            item[i + 3] = newCentralItems[i];
-            item[i + 6] = movedItems[i];
-        }
-        // console.log('новый набор: ', item);
+    // slider_wrapper.offsetWidth>600 =>3 slides; < 400 =>1 slides ; else 2 slides
+    if (slider_wrapper.offsetWidth > 600) amountSlides = 3;
+    else if (slider_wrapper.offsetWidth < 400) amountSlides = 1;
+    else amountSlides = 2;
+    // 
+    switch (amountSlides) {
+        case 1:
+            if (moveDirection === 'left') {
+                newRandomItems.push(generateNewItem([item[0], item[1], item[2], item[3], item[4], item[5]]));
+                // console.log(newRandomItems, item[2], item[3]);
+                generateCard(petsInformation[newRandomItems[0]].name, petsInformation[newRandomItems[0]].img, 2);
+                deleteSlider('end');
+                item.pop();
+                item.unshift(newRandomItems[0]);
+            }
+            else {
+                newRandomItems.push(generateNewItem([item[4], item[3]]));
+                generateCard(petsInformation[newRandomItems[0]].name, petsInformation[newRandomItems[0]].img, 5);
+                deleteSlider('start');
+                item.shift();
+                item.push(newRandomItems[0]);
+            }
+            break;
+        case 2:
+            if (moveDirection === 'left') {
+                for (let i = 0; i < amountSlides; i++) {
+                    newCentralItems.push(item[i + 1]);
+                    movedItems.push(item[i + 3]);
+                }
+                for (let i = 0; i < amountSlides; i++) newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+
+                for (let i = 0; i < amountSlides; i++) {
+                    item[i + 1] = newRandomItems[i];
+                    generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 1);
+                    deleteSlider('end');
+                    item[i + 3] = newCentralItems[i];
+                    item[i + 5] = movedItems[i];
+                }
+            }
+            else {
+                for (let i = 0; i < amountSlides; i++) {
+                    newCentralItems.push(item[i + 5]);
+                    movedItems.push(item[i + 3]);
+                }
+                for (let i = 0; i < amountSlides; i++) newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+
+                for (let i = 0; i < amountSlides; i++) {
+                    deleteSlider('start');
+                    generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 7);
+                    item[i + 1] = movedItems[i];
+                    item[i + 3] = newCentralItems[i];
+                    item[i + 5] = newRandomItems[i];
+                }
+            }
+            break;
+        default:
+            if (moveDirection === 'left') {
+                for (let i = 0; i < 3; i++) {
+                    newCentralItems.push(item[i]);
+                    movedItems.push(item[i + 3]);
+                }
+                for (let i = 0; i < 3; i++) {
+                    newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+                };
+                // console.log(newCentralItems, movedItems, newRandomItems);
+                for (let i = 0; i < 3; i++) {
+                    item[i] = newRandomItems[i];
+                    deleteSlider('end');
+                    generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'start');
+                    item[i + 3] = newCentralItems[i];
+                    item[i + 6] = movedItems[i];
+                }
+                // console.log('новый набор: ', item);
+            }
+            else {
+                for (let i = 0; i < 3; i++) {
+                    newCentralItems.push(item[i + 6]);
+                    movedItems.push(item[i + 3]);
+                }
+                for (let i = 0; i < 3; i++) {
+                    newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+                };
+                // console.log(newCentralItems, movedItems, newRandomItems);
+                for (let i = 0; i < 3; i++) {
+                    item[i] = movedItems[i];
+                    item[i + 3] = newCentralItems[i];
+                    item[i + 6] = newRandomItems[i];
+                    deleteSlider('start');
+                    generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'end');
+                }
+            }
     }
-    else {
-        for (let i = 0; i < 3; i++) {
-            newCentralItems.push(item[i + 6]);
-            movedItems.push(item[i + 3]);
-        }
-        for (let i = 0; i < 3; i++) {
-            newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
-        };
-        // console.log(newCentralItems, movedItems, newRandomItems);
-        for (let i = 0; i < 3; i++) {
-            item[i] = movedItems[i];
-            item[i + 3] = newCentralItems[i];
-            item[i + 6] = newRandomItems[i];
-            deleteSlider('start');
-            generateCard(petsInformation[newRandomItems[i]].name, petsInformation[newRandomItems[i]].img, 'end');
-        }
-        // console.log('новый набор: ', item);
-    }
-};
+    // console.log('новый набор: ', item);
+}
 
 btn_left.addEventListener('click', moveLeft);
 btn_right.addEventListener('click', moveRight);
@@ -227,7 +299,6 @@ slider.addEventListener('animationend', () => {
         generateLeftSet = false;
     }
     else {
-        // if (generateRightSet) 
         refreshSlider('right');
         slider.classList.remove('transition-right');
         btn_right.addEventListener('click', moveRight);
