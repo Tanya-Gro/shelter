@@ -275,7 +275,7 @@ body.active {
     color: #292929;
 }
 
-.round-button:hover {
+.on:hover {
     background: #FDDCC4;
     border: 2px solid #FDDCC4;
     transition: 0.4s;

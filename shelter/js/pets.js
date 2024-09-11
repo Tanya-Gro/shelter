@@ -101,7 +101,7 @@ burger.addEventListener("click", () => burgerClick()
 );
 
 navigation.addEventListener("click", (event) => {
-    console.log(event.target.classList.value);
+    // console.log(event.target.classList.value);
     if (event.target.classList.value === 'navigation active' || event.target.classList.value === 'p-l color-dark-l' || event.target.classList.value === 'p-l color-dark-3xl') burgerClick();
 });
 
@@ -145,3 +145,141 @@ const generatePopUp = (petsName) => {
     <li class="h-5"><span><b>Diseases:</b> ${petsCard.diseases.join(', ') ? petsCard.diseases.join(', ') : 'none'}</span></li> 
     <li class="h-5"><span><b>Parasites:</b> ${petsCard.parasites.join(', ') ? petsCard.parasites.join(', ') : 'none'}</span></li>`;
 }
+
+/*********************************************************************************** */
+/****************************** pagination ******************************/
+/***  get new per`s id ***/
+let flag = 0;
+const generateNewItem = (exeptItems = []) => {
+    flag = 1;
+    while (flag === 1) {
+        randomNum = Math.floor(Math.random() * 8);
+        // console.log(randomNum, exeptItems, exeptItems.includes(randomNum));
+        if (!exeptItems.includes(randomNum) && randomNum !== 8) {
+            flag = 0;
+            return randomNum;
+        }
+    }
+}
+
+let paggination = [];
+let pagginationCol = [];
+let pages = 6;
+let pageId = 1;
+let countCardsOnPage = 8;
+// let exeptArray = [];
+// let RN = 1;
+
+for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 8; j++) {
+        pagginationCol.push(generateNewItem(pagginationCol));
+        // pagginationCol.push(RN);
+        // exeptArray.push(RN);
+    }
+    paggination.push([...pagginationCol]);
+    pagginationCol.length = 0;
+}
+// console.log(paggination);
+
+/****************************************************** */
+/********** pagination ******************************** */
+const leftAtAll = document.querySelectorAll('.button-group .round-button')[0];
+const stepOnLeft = document.querySelectorAll('.button-group .round-button')[1];
+const numberButton = document.querySelectorAll('.button-group .round-button')[2];
+const stepOnRight = document.querySelectorAll('.button-group .round-button')[3];
+const rightAtAll = document.querySelectorAll('.button-group .round-button')[4];
+
+// console.log(numberButton);
+const checkPushedButtons = (event) => {
+    const ButtonName = event.target.innerText;
+    // console.log(ButtonName);
+    switch (ButtonName) {
+        case '>':
+            // console.log('шаг вправо');
+            console.log(pageId, pages);
+            pageId = pageId + 1;
+            if (pageId === 2) leftOn();
+            if (pageId === pages) rightOff();
+            break;
+        case '>>':
+            // console.log('до упора вправо');
+            if (pageId === 1) leftOn();
+            pageId = pages;
+            rightOff();
+            // console.log(pageId, pages);
+            break;
+        case '<':
+            // console.log('шаг влево');
+            pageId = pageId - 1;
+            if (pageId === 1) leftOff();
+            if (pageId === (pages - 1)) rightOn();
+            break;
+        case '<<':
+            // console.log('до упора влево');
+            if (pageId === 6) rightOn();
+            pageId = 1;
+            leftOff();
+            // console.log(pageId, pages);
+            break;
+        default: console.log('Роджер Всегда Не Туда');
+    }
+    numberButton.innerText = ` ${pageId} `;
+    refreshPage();
+};
+const leftOn = () => {
+    leftAtAll.classList.add('on');
+    stepOnLeft.classList.add('on');
+    leftAtAll.classList.remove('off');
+    stepOnLeft.classList.remove('off');
+    // addEventPagination();
+    leftAtAll.addEventListener('click', checkPushedButtons);
+    stepOnLeft.addEventListener('click', checkPushedButtons);
+}
+
+const leftOff = () => {
+    leftAtAll.classList.remove('on');
+    stepOnLeft.classList.remove('on');
+    leftAtAll.classList.add('off');
+    stepOnLeft.classList.add('off');
+
+    leftAtAll.removeEventListener('click', checkPushedButtons);
+    stepOnLeft.removeEventListener('click', checkPushedButtons);
+}
+
+const rightOn = () => {
+    stepOnRight.classList.add('on');
+    rightAtAll.classList.add('on');
+    stepOnRight.classList.remove('off');
+    rightAtAll.classList.remove('off');
+    stepOnRight.addEventListener('click', checkPushedButtons);
+    rightAtAll.addEventListener('click', checkPushedButtons);
+};
+
+const rightOff = () => {
+    stepOnRight.classList.remove('on');
+    rightAtAll.classList.remove('on');
+    stepOnRight.classList.add('off');
+    rightAtAll.classList.add('off');
+    stepOnRight.removeEventListener('click', checkPushedButtons);
+    rightAtAll.removeEventListener('click', checkPushedButtons);
+};
+
+const cardSet = document.querySelectorAll('.friend-card');
+
+const refreshPage = () => {
+    for (let i = 0; i < countCardsOnPage; i++) {
+        // console.log(paggination[pageId - 1][i]);
+        // console.log(petsInformation[paggination[pageId - 1][i]].img);
+        cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[pageId - 1][i]].img);
+        cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[pageId - 1][i]].name);
+        cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[pageId - 1][i]].name;
+    }
+};
+
+const addEventPagination = () => {
+    const buttonSet = document.querySelectorAll('.on');
+    for (let i = 0; i < buttonSet.length; i++)
+        buttonSet[i].addEventListener('click', checkPushedButtons);
+}
+
+addEventPagination();
