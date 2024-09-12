@@ -153,20 +153,6 @@ const generatePopUp = (petsName) => {
 
 /*********************************************************************************** */
 /****************************** pagination ******************************/
-/***  get new per`s id ***/
-let flag = 0;
-const generateNewItem = (exeptItems = []) => {
-    flag = 1;
-    while (flag === 1) {
-        randomNum = Math.floor(Math.random() * 8);
-        // console.log(randomNum, exeptItems, exeptItems.includes(randomNum));
-        if (!exeptItems.includes(randomNum) && randomNum !== 8) {
-            flag = 0;
-            return randomNum;
-        }
-    }
-}
-
 let paggination = [];
 let pagginationCol = [];
 let pageId = 1;
@@ -175,7 +161,7 @@ let countCardsOnPage = 8;
 
 const setPageSettings = () => {
     const widthPaginationBlock = friends_cards.offsetWidth;
-    // console.log(widthPaginationBlock);
+    // console.log(widthPaginationBlock, 'обновляем настройки');
     if (widthPaginationBlock >= 580 && widthPaginationBlock < 1000) {
         pages = 8;
         countCardsOnPage = 6;
@@ -192,17 +178,39 @@ const setPageSettings = () => {
 
     if (pageId > pages) {
         pageId = pages;
-        refreshPage();
         numberButton.innerText = ` ${pageId} `;
         rightOff();
     }
+    if (pageId < pages && (pageId === 8 || pageId === 6)) rightOn();
 }
 setPageSettings();
 
 
+/****************************************************** */
+/********** pagination ******************************** */
+const leftAtAll = document.querySelectorAll('.button-group .round-button')[0];
+const stepOnLeft = document.querySelectorAll('.button-group .round-button')[1];
+const numberButton = document.querySelectorAll('.button-group .round-button')[2];
+const stepOnRight = document.querySelectorAll('.button-group .round-button')[3];
+const rightAtAll = document.querySelectorAll('.button-group .round-button')[4];
 // let exeptArray = [];
 // let RN = 1;
+/********** pagination ******************************** */
 /************************* array ********************** */
+/***  get new per`s id ***/
+let flag = 0;
+const generateNewItem = (exeptItems = []) => {
+    flag = 1;
+    while (flag === 1) {
+        randomNum = Math.floor(Math.random() * 8);
+        // console.log(randomNum, exeptItems, exeptItems.includes(randomNum));
+        if (!exeptItems.includes(randomNum) && randomNum !== 8) {
+            flag = 0;
+            return randomNum;
+        }
+    }
+}
+
 for (let i = 0; i < 6; i++) {
     for (let j = 0; j < 8; j++) {
         pagginationCol.push(generateNewItem(pagginationCol));
@@ -212,7 +220,6 @@ for (let i = 0; i < 6; i++) {
     paggination.push([...pagginationCol]);
     pagginationCol.length = 0;
 }
-
 // console.log(paggination);
 const checkArray = () => {
     for (let i = 0; i < 6; i++) {
@@ -245,13 +252,6 @@ const checkRow = (i, j) => {
 checkArray();
 // console.log(paggination);
 
-/****************************************************** */
-/********** pagination ******************************** */
-const leftAtAll = document.querySelectorAll('.button-group .round-button')[0];
-const stepOnLeft = document.querySelectorAll('.button-group .round-button')[1];
-const numberButton = document.querySelectorAll('.button-group .round-button')[2];
-const stepOnRight = document.querySelectorAll('.button-group .round-button')[3];
-const rightAtAll = document.querySelectorAll('.button-group .round-button')[4];
 
 // console.log(numberButton);
 const checkPushedButtons = (event) => {
@@ -334,6 +334,7 @@ const cardSet = document.querySelectorAll('.friend-card');
 const refreshPage = () => {
     switch (countCardsOnPage) {
         case 8:
+            // console.log('обновдяемся на 8 карточек');
             for (let i = 0; i < countCardsOnPage; i++) {
                 // console.log(paggination[pageId - 1][i]);
                 // console.log(petsInformation[paggination[pageId - 1][i]].img);
@@ -343,6 +344,7 @@ const refreshPage = () => {
             }
             break;
         case 6:
+            // console.log('обновдяемся на 6 карточек');
             for (let i = 0; i < countCardsOnPage; i++) {
                 cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[i][pageId - 1]].img);
                 cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[i][pageId - 1]].name);
@@ -350,6 +352,7 @@ const refreshPage = () => {
             }
             break;
         case 3:
+            // console.log('обновдяемся на 3 карточки');
             if (pageId <= 8)
                 for (let i = 0; i < countCardsOnPage; i++) {
                     cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[i][pageId - 1]].img);
@@ -367,6 +370,7 @@ const refreshPage = () => {
             console.log('Роджер Всегда Не Туда');
     }
 };
+refreshPage();
 
 const addEventPagination = () => {
     const buttonSet = document.querySelectorAll('.on');
@@ -376,5 +380,5 @@ const addEventPagination = () => {
 
 addEventPagination();
 
-
 window.addEventListener('resize', setPageSettings);
+window.addEventListener('resize', refreshPage);
