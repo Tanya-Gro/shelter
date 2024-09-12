@@ -156,11 +156,13 @@ const moveLeft = () => {
     // btn_left.classList.add('btn-disable');
     slider.classList.add('transition-left');
     btn_left.removeEventListener('click', moveLeft);
+    btn_right.removeEventListener('click', moveRight);
     generateLeftSet = true;
 }
 const moveRight = () => {
     slider.classList.add('transition-right');
     btn_right.removeEventListener('click', moveRight);
+    btn_left.removeEventListener('click', moveLeft);
     generateRightSet = true;
 }
 
@@ -300,20 +302,26 @@ slider.addEventListener('animationend', () => {
     if (generateLeftSet) {
         refreshSlider('left');
         slider.classList.remove('transition-left');
-        btn_left.addEventListener('click', moveLeft);
         generateLeftSet = false;
     }
     else {
         refreshSlider('right');
         slider.classList.remove('transition-right');
-        btn_right.addEventListener('click', moveRight);
         generateRightSet = false;
     }
+    btn_left.addEventListener('click', moveLeft);
+    btn_right.addEventListener('click', moveRight);
 })
 
 /*************************************************************************** */
 /************************************* burger ********************************/
-burger.addEventListener("click", () => burgerClick());
+
+const burgerClick = () => {
+    navigation.classList.toggle('active');
+    burger.classList.toggle('active');
+    body.classList.toggle('active');
+}
+burger.addEventListener("click", burgerClick);
 
 navigation.addEventListener("click", (event) => {
     // console.log(event);
@@ -323,12 +331,6 @@ navigation.addEventListener("click", (event) => {
         body.classList.remove('active');
     }
 });
-
-const burgerClick = () => {
-    navigation.classList.toggle('active');
-    burger.classList.toggle('active');
-    body.classList.toggle('active');
-}
 
 /*************************************************************************** */
 /************************************* pop up ********************************/

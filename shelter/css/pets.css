@@ -485,11 +485,45 @@ body.active {
         right: 0;
     }
 
+    @keyframes burger-rotate {
+        from {
+            transform: rotate(0turn);
+            /* opacity: 0; */
+        }
+
+        100% {
+            transform: rotate(0.25turn);
+            /* opacity: 1; */
+        }
+    }
+
+    @keyframes burger-rotate-back {
+        from {
+            transform: rotate(0.25turn);
+        }
+
+        50% {
+            transform: rotate(0.125turn);
+        }
+
+        100% {
+            transform: rotate(0turn);
+        }
+    }
+
+    .burger {
+        animation-name: burger-rotate-back;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
     .burger.active {
-        transform: rotate(90deg);
-        transition: all 0.3s;
         position: fixed;
         right: 30px;
+        animation-name: burger-rotate;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
     }
 
     .navigation {
