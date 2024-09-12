@@ -289,7 +289,7 @@ body.active {
 
 .transition-left {
     animation-name: move-left;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
 }
 
 @keyframes move-right {
@@ -304,7 +304,7 @@ body.active {
 
 .transition-right {
     animation-name: move-right;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
 }
 
 /*************************slider 1130 ********************************/
@@ -399,6 +399,7 @@ body.active {
 /* -------------------------- help ---------------------------------------*/
 .help {
     padding: 80px 125px 100px 125px;
+    box-sizing: border-box;
 }
 
 .help .h-3 {

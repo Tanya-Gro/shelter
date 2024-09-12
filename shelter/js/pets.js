@@ -94,6 +94,7 @@ const navigation = document.querySelector('.navigation');
 const body = document.querySelector('body');
 const popUp_container = document.querySelector('.popUp_container');
 const popUp_close = document.querySelector('.popUp_close');
+const friends_cards = document.querySelector('.friends-cards');
 
 /*************************************************************************** */
 /************************************* burger ********************************/
@@ -102,7 +103,11 @@ burger.addEventListener("click", () => burgerClick()
 
 navigation.addEventListener("click", (event) => {
     // console.log(event.target.classList.value);
-    if (event.target.classList.value === 'navigation active' || event.target.classList.value === 'p-l color-dark-l' || event.target.classList.value === 'p-l color-dark-3xl') burgerClick();
+    if (event.target.classList.value === 'navigation active' || event.target.classList.value === 'p-l color-dark-l' || event.target.classList.value === 'p-l color-dark-3xl') {
+        navigation.classList.remove('active');
+        burger.classList.remove('active');
+        body.classList.remove('active');
+    };
 });
 
 const burgerClick = () => {
@@ -164,12 +169,40 @@ const generateNewItem = (exeptItems = []) => {
 
 let paggination = [];
 let pagginationCol = [];
-let pages = 6;
 let pageId = 1;
+let pages = 6;
 let countCardsOnPage = 8;
+
+const setPageSettings = () => {
+    const widthPaginationBlock = friends_cards.offsetWidth;
+    // console.log(widthPaginationBlock);
+    if (widthPaginationBlock >= 580 && widthPaginationBlock < 1000) {
+        pages = 8;
+        countCardsOnPage = 6;
+    }
+    else if (widthPaginationBlock < 580) {
+        pages = 16;
+        countCardsOnPage = 3;
+    }
+    else {
+        pages = 6;
+        countCardsOnPage = 8;
+    }
+    // console.log(pageId, ' из ', pages, 'на странице:', countCardsOnPage, 'карточек');
+
+    if (pageId > pages) {
+        pageId = pages;
+        refreshPage();
+        numberButton.innerText = ` ${pageId} `;
+        rightOff();
+    }
+}
+setPageSettings();
+
+
 // let exeptArray = [];
 // let RN = 1;
-
+/************************* array ********************** */
 for (let i = 0; i < 6; i++) {
     for (let j = 0; j < 8; j++) {
         pagginationCol.push(generateNewItem(pagginationCol));
@@ -179,6 +212,37 @@ for (let i = 0; i < 6; i++) {
     paggination.push([...pagginationCol]);
     pagginationCol.length = 0;
 }
+
+// console.log(paggination);
+const checkArray = () => {
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 8; j++) {
+            // console.log('ищем совпадения в ', i, 'строке, элемента', paggination[i][j]);
+            for (let k = i + 1; k < 6; k++)
+                if (paggination[i][j] === paggination[k][j]) {
+                    // console.log('нашли совпадения, ищум подходящую замену');
+                    let x = checkRow(i, j + 1);
+                    if (x) {
+                        // console.log('меняем в ', i, 'строке', paggination[i][j], 'на', paggination[i][x]);
+                        let y = paggination[i][j];
+                        paggination[i][j] = paggination[i][x];
+                        paggination[i][x] = y;
+                        // console.log('повторяем проверку в ', i, 'строке, ищем совпадения с', paggination[i][j]);
+                        k = i + 1;
+                    }
+                }
+        }
+    }
+}
+const checkRow = (i, j) => {
+    // console.log('ищем замену ', i, j);
+    for (let l = j; l < 8; l++) {
+        for (let k = i + 1; k < 6; k++)
+            if (paggination[i][l] === paggination[k][l])
+                return l;
+    }
+}
+checkArray();
 // console.log(paggination);
 
 /****************************************************** */
@@ -196,7 +260,7 @@ const checkPushedButtons = (event) => {
     switch (ButtonName) {
         case '>':
             // console.log('шаг вправо');
-            console.log(pageId, pages);
+            // console.log(pageId, pages);
             pageId = pageId + 1;
             if (pageId === 2) leftOn();
             if (pageId === pages) rightOff();
@@ -216,7 +280,8 @@ const checkPushedButtons = (event) => {
             break;
         case '<<':
             // console.log('до упора влево');
-            if (pageId === 6) rightOn();
+            // console.log(pageId, pages);
+            if (pageId === pages) rightOn();
             pageId = 1;
             leftOff();
             // console.log(pageId, pages);
@@ -267,12 +332,39 @@ const rightOff = () => {
 const cardSet = document.querySelectorAll('.friend-card');
 
 const refreshPage = () => {
-    for (let i = 0; i < countCardsOnPage; i++) {
-        // console.log(paggination[pageId - 1][i]);
-        // console.log(petsInformation[paggination[pageId - 1][i]].img);
-        cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[pageId - 1][i]].img);
-        cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[pageId - 1][i]].name);
-        cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[pageId - 1][i]].name;
+    switch (countCardsOnPage) {
+        case 8:
+            for (let i = 0; i < countCardsOnPage; i++) {
+                // console.log(paggination[pageId - 1][i]);
+                // console.log(petsInformation[paggination[pageId - 1][i]].img);
+                cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[pageId - 1][i]].img);
+                cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[pageId - 1][i]].name);
+                cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[pageId - 1][i]].name;
+            }
+            break;
+        case 6:
+            for (let i = 0; i < countCardsOnPage; i++) {
+                cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[i][pageId - 1]].img);
+                cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[i][pageId - 1]].name);
+                cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[i][pageId - 1]].name;
+            }
+            break;
+        case 3:
+            if (pageId <= 8)
+                for (let i = 0; i < countCardsOnPage; i++) {
+                    cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[i][pageId - 1]].img);
+                    cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[i][pageId - 1]].name);
+                    cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[i][pageId - 1]].name;
+                }
+            else
+                for (let i = 0; i < countCardsOnPage; i++) {
+                    cardSet[i].querySelector('.friend-img').setAttribute('src', petsInformation[paggination[i + 3][pageId - 9]].img);
+                    cardSet[i].querySelector('.friend-img').setAttribute('alt', petsInformation[paggination[i + 3][pageId - 9]].name);
+                    cardSet[i].querySelector('.friend-p').innerText = petsInformation[paggination[i + 3][pageId - 9]].name;
+                }
+            break;
+        default:
+            console.log('Роджер Всегда Не Туда');
     }
 };
 
@@ -283,3 +375,6 @@ const addEventPagination = () => {
 }
 
 addEventPagination();
+
+
+window.addEventListener('resize', setPageSettings);

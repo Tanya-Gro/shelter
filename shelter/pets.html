@@ -12,36 +12,38 @@
 
 <body>
     <div class="container bg-light-xl coll">
-        <header class="pets-header between">
-            <div class="logo">
-                <a class="logo-link" href="./index.html">
-                    <h1 class="logo-title color-dark-l">Cozy House</h1>
-                    <p class="subtitle color-dark-l">Shelter for pets in Boston</p>
-                </a>
-            </div>
+        <div class="wrapper">
+            <header class="pets-header between">
+                <div class="logo">
+                    <a class="logo-link" href="./index.html">
+                        <h1 class="logo-title color-dark-l">Cozy House</h1>
+                        <p class="subtitle color-dark-l">Shelter for pets in Boston</p>
+                    </a>
+                </div>
 
-            <div class="burger">
-                <span></span>
-            </div>
+                <div class="burger">
+                    <span></span>
+                </div>
 
-            <nav class="navigation">
-                <ul class="navigation-elem between">
-                    <li class="navigation-item">
-                        <a class="p-l color-dark-l" href="./index.html">About the shelter</a>
-                    </li>
-                    <li class="navigation-item-pets">
-                        <p class="p-l color-dark-3xl">Our pets</p>
-                    </li>
-                    <li class="navigation-item">
-                        <a class="p-l color-dark-l" href="./index.html#help">Help the
-                            shelter</a>
-                    </li>
-                    <li class="navigation-item">
-                        <a class="p-l color-dark-l" href="#contacts">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+                <nav class="navigation">
+                    <ul class="navigation-elem between">
+                        <li class="navigation-item">
+                            <a class="p-l color-dark-l" href="./index.html">About the shelter</a>
+                        </li>
+                        <li class="navigation-item-pets">
+                            <p class="p-l color-dark-3xl">Our pets</p>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="p-l color-dark-l" href="./index.html#help">Help the
+                                shelter</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="p-l color-dark-l" href="#contacts">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
 
         <main class="container bg-light-l">
             <div class="friends coll">
@@ -103,43 +105,44 @@
                 </div>
             </div>
         </main>
-
         <footer class="container bg-brown" id="contacts">
-            <div class="pets-footer row">
-                <div class="main-footer-contacts">
-                    <h3 class="h-3 color-white">For questions and suggestions</h3>
-                    <div class="contact-item ">
-                        <a class="row mail-to" href="mailto:email@shelter.com">
-                            <img src="./assets/svg/icon-email.svg" alt="icon-email">
-                            <h4 class="h-4 color-primary">email@shelter.com</h4>
+            <div class="wrapper">
+                <div class="pets-footer row">
+                    <div class="main-footer-contacts">
+                        <h3 class="h-3 color-white">For questions and suggestions</h3>
+                        <div class="contact-item ">
+                            <a class="row mail-to" href="mailto:email@shelter.com">
+                                <img src="./assets/svg/icon-email.svg" alt="icon-email">
+                                <h4 class="h-4 color-primary">email@shelter.com</h4>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="tel:+136745677554" class="call-to row">
+                                <img class="phone" src="./assets/svg/icon-phone.svg" alt="icon-phone">
+                                <h4 class="h-4 color-primary">+13 674 567 75 54</h4>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="main-footer-location">
+                        <h3 class="h-3 color-white">We are waiting for your visit</h3>
+                        <a class="location-item-boston row"
+                            href="https://www.google.com/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585559,-71.0573012,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.358552!4d-71.0547263?entry=ttu"
+                            target="_blank">
+                            <img src="./assets/png/pin.png" alt="pin">
+                            <h4 class="h-4 color-primary">1 Central Street, Boston (entrance from the store)</h4>
+                        </a>
+
+                        <a class="location-item-london row"
+                            href="https://www.google.com/maps/place/South+Park+Studios/@51.466808,-0.2603232,13z/data=!4m10!1m2!2m1!1s18+South+Park,+London!3m6!1s0x48760f7bf83d565b:0x9697b9c736a2d5a6!8m2!3d51.4668093!4d-0.193571!15sChUxOCBTb3V0aCBQYXJrLCBMb25kb26SARpvZmZpY2Vfc3BhY2VfcmVudGFsX2FnZW5jeeABAA!16s%2Fg%2F1tdwddw_?entry=ttu"
+                            target="_blank">
+                            <img src="./assets/png/pin.png" alt="pin">
+                            <h4 class="h-4 color-primary">18 South Park, London</h4>
                         </a>
                     </div>
-                    <div class="contact-item">
-                        <a href="tel:+136745677554" class="call-to row">
-                            <img class="phone" src="./assets/svg/icon-phone.svg" alt="icon-phone">
-                            <h4 class="h-4 color-primary">+13 674 567 75 54</h4>
-                        </a>
-                    </div>
+
+                    <img class="main-footer-img" src="./assets/png/footer-puppy.png" alt="footer-puppy">
                 </div>
-
-                <div class="main-footer-location">
-                    <h3 class="h-3 color-white">We are waiting for your visit</h3>
-                    <a class="location-item-boston row"
-                        href="https://www.google.com/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585559,-71.0573012,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.358552!4d-71.0547263?entry=ttu"
-                        target="_blank">
-                        <img src="./assets/png/pin.png" alt="pin">
-                        <h4 class="h-4 color-primary">1 Central Street, Boston (entrance from the store)</h4>
-                    </a>
-
-                    <a class="location-item-london row"
-                        href="https://www.google.com/maps/place/South+Park+Studios/@51.466808,-0.2603232,13z/data=!4m10!1m2!2m1!1s18+South+Park,+London!3m6!1s0x48760f7bf83d565b:0x9697b9c736a2d5a6!8m2!3d51.4668093!4d-0.193571!15sChUxOCBTb3V0aCBQYXJrLCBMb25kb26SARpvZmZpY2Vfc3BhY2VfcmVudGFsX2FnZW5jeeABAA!16s%2Fg%2F1tdwddw_?entry=ttu"
-                        target="_blank">
-                        <img src="./assets/png/pin.png" alt="pin">
-                        <h4 class="h-4 color-primary">18 South Park, London</h4>
-                    </a>
-                </div>
-
-                <img class="main-footer-img" src="./assets/png/footer-puppy.png" alt="footer-puppy">
             </div>
         </footer>
         <div class="popUp_container">

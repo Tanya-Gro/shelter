@@ -91,6 +91,12 @@ body.active {
     color: #292929;
 }
 
+.wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /*****************main/friends****************/
 .friends {
     width: 100%;

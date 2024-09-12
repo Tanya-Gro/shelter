@@ -218,11 +218,12 @@ const refreshSlider = moveDirection => {
             break;
         case 2:
             if (moveDirection === 'left') {
+                // console.log('старый набор: ', item);
                 for (let i = 0; i < amountSlides; i++) {
                     newCentralItems.push(item[i + 1]);
                     movedItems.push(item[i + 3]);
                 }
-                for (let i = 0; i < amountSlides; i++) newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+                for (let i = 0; i < amountSlides; i++) newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems], item[0]));
 
                 for (let i = 0; i < amountSlides; i++) {
                     item[i + 1] = newRandomItems[i];
@@ -231,13 +232,16 @@ const refreshSlider = moveDirection => {
                     item[i + 3] = newCentralItems[i];
                     item[i + 5] = movedItems[i];
                 }
+                // console.log(item, newCentralItems, movedItems);
             }
             else {
+                // console.log('старый набор: ', item);
                 for (let i = 0; i < amountSlides; i++) {
                     newCentralItems.push(item[i + 5]);
                     movedItems.push(item[i + 3]);
                 }
-                for (let i = 0; i < amountSlides; i++) newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems]));
+                for (let i = 0; i < amountSlides; i++)
+                    newRandomItems.push(generateNewItem([...newCentralItems, ...newRandomItems, item[8], item[7]]));
 
                 for (let i = 0; i < amountSlides; i++) {
                     deleteSlider('start');
@@ -246,6 +250,7 @@ const refreshSlider = moveDirection => {
                     item[i + 3] = newCentralItems[i];
                     item[i + 5] = newRandomItems[i];
                 }
+                // console.log(item, newCentralItems, movedItems);
             }
             break;
         default:
@@ -360,12 +365,11 @@ const generatePopUp = (petsName) => {
     <li class="h-5"><span><b>Parasites:</b> ${petsCard.parasites.join(', ') ? petsCard.parasites.join(', ') : 'none'}</span></li>`;
 }
 
-
 /********************************************************************************* */
 /************************************ myself check ******************************* */
 console.log("Реализация burger menu на обеих страницах: +26");
 console.log("Реализация слайдера-карусели на странице Main: +36");
-// console.log("Реализация пагинации на странице Pets: +36");
+console.log("Реализация пагинации на странице Pets: +36");
 console.log("Реализация попап на обеих страницах: +12");
 
-console.log("ИТОГО 74 балла");
+console.log("ИТОГО 110 балла");
