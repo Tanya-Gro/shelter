@@ -1,5 +1,53 @@
+:root {
+    --blue: rgb(17, 17, 117);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+button {
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.play {
+    padding-left: 5px;
+    background-image: url(./assets/buttons/play.png)
+}
+
+.pause {
+    background-image: url(./assets/buttons/pause.png)
+}
+
+.next {
+    background-image: url(./assets/buttons/next.png)
+}
+
+.back {
+    background-image: url(./assets/buttons/back.png)
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(135deg, #5eeafc 10%, #f0399e 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.rsslogo {
+    width: 100px;
 }
