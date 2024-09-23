@@ -4,6 +4,7 @@ const back = document.querySelector('.back');
 const next = document.querySelector('.next');
 const speakers = document.querySelector('.speakers');
 const nameTrack = document.querySelector('.nameTrack span');
+const image = document.querySelector('.image');
 
 const playList = [
     {
@@ -57,10 +58,12 @@ function playMusic() {
     else {
         // audio.currentTime = 0;
         if (fromStart) audio.src = playList[track].path;
-        // console.log('play', playList[track].path);
         audio.play();
         play.classList.add('pause');
         nameTrack.innerText = `${playList[track].artist} - ${playList[track].track}`;
+        image.style.backgroundImage = `url("${playList[track].img}")`;
+        document.querySelector("body").style.background = `linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8)), url("${playList[track].img}")`;
+        // console.log(image.style.backgroundImage);
     }
 }
 

@@ -1,6 +1,7 @@
 :root {
-    --blue: rgb(17, 17, 117);
-    --purple: #c06bb9;
+    --blue: rgb(47, 47, 78);
+    --purple: rgb(125, 112, 134);
+    --black: rgb(0, 0, 0);
 }
 
 * {
@@ -8,12 +9,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
     font-weight: 600;
-    color: var(--blue);
+    color: var(--purple);
+}
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8)), url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
+    /* background-image: url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .wrapper {
-    margin-top: 40vh;
+    margin-top: 10vh;
     margin-left: 30vw;
     width: 30%;
     min-width: 200px;
@@ -21,23 +31,38 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 1.0;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    background-image: url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
+    background-size: cover;
+    border-radius: 5%;
+    transition: 0.5s;
 }
 
 .nameTrack {
-    margin-bottom: 20px;
+    margin: 20px 20px;
+}
+
+.nameTrack span {
+    color: var(--black);
 }
 
 button {
     border-radius: 50%;
     border: 2px solid var(--blue);
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-size: cover;
     cursor: pointer;
+    opacity: 0.5;
 }
 
 button:hover {
-    border-color: var(--purple);
+    border-color: var(--black);
     transition: 0.3s;
 }
 
@@ -69,12 +94,13 @@ button:hover {
 footer {
     width: 100%;
     height: 50px;
-    background-image: linear-gradient(135deg, #5eeafc 10%, #f0399e 100%);
+    background: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     bottom: 0;
+    opacity: 0.7;
 }
 
 .rsslogo {
