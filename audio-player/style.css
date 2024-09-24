@@ -16,22 +16,28 @@
 
 body {
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8)), url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
-    /* background-image: url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg"); */
     background-size: cover;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    background-repeat: round;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+
 }
 
 .wrapper {
-    margin-top: 10vh;
-    margin-left: 30vw;
-    width: 30%;
     min-width: 200px;
+    min-height: 325px;
+    margin-top: 20px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    opacity: 1.0;
+    opacity: 1;
+    background: rgba(72, 87, 90, 0.2);
+    box-shadow: 0px 7px 10px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
 .image {
@@ -66,8 +72,16 @@ button:hover {
     transition: 0.3s;
 }
 
+.back {
+    margin-left: 25px;
+    background-image: url(./assets/buttons/back.png)
+}
+
+.stop {
+    background-image: url(./assets/buttons/stop.png)
+}
+
 .play {
-    padding-left: 5px;
     background-image: url(./assets/buttons/play.png)
 }
 
@@ -79,9 +93,6 @@ button:hover {
     background-image: url(./assets/buttons/next.png)
 }
 
-.back {
-    background-image: url(./assets/buttons/back.png)
-}
 
 .speakers {
     background-image: url(./assets/buttons/speakers.png)
@@ -91,16 +102,42 @@ button:hover {
     background-image: url(./assets/buttons/mute.png)
 }
 
+.volume {
+    width: 50px;
+    height: 5px;
+    transform-origin: 11px 3px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background: grey;
+    border-radius: 5px;
+}
+
+.volume::-webkit-slider-thumb {
+    appearance: none;
+    background: rgba(3, 3, 3, 0.808);
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+}
+
+.volume::-webkit-slider-thumb:hover {
+    width: 13px;
+    height: 13px;
+}
+
 footer {
     width: 100%;
-    height: 50px;
-    background: black;
+    height: 40px;
+    background: linear-gradient(90deg, var(--black) 0%, rgb(100, 33, 33) 35%, rgb(88, 108, 112) 100%);
+    filter: drop-shadow(0 0 0.75rem rgb(100, 33, 33));
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     bottom: 0;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .rsslogo {
