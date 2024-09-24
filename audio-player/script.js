@@ -5,6 +5,9 @@ const back = document.querySelector('.back');
 const next = document.querySelector('.next');
 const speakers = document.querySelector('.speakers');
 const volume = document.querySelector('.volume');
+const progressBar = document.querySelector('.progressBar');
+const progressTine = document.querySelector('.progressTine');
+const fullTime = document.querySelector('.fullTime');
 const nameTrack = document.querySelector('.nameTrack span');
 const image = document.querySelector('.image');
 
@@ -71,6 +74,22 @@ function playMusic() {
         document.querySelector("body").style.backgroundRepeat = "round";
     }
 }
+// playMusic();
+// playMusic();
+
+audio.onloadedmetadata = function () {
+    fullTime.innerText = getTimeFromNum(audio.duration);
+};
+
+audio.src = playList[track].path;
+setInterval(() => {
+    progressBar.value = audio.currentTime / audio.duration;
+    progressTine.innerText = getTimeFromNum(audio.currentTime);
+}, 1000);
+
+audio.onended = function () {
+    nextMusic();
+};
 
 function stopMusic() {
     fromStart = true;
@@ -105,6 +124,13 @@ function changeVolume() {
     audio.volume = volume.value;
     if (volume.value == 0 || (speakers.classList.contains('mute') && volume.value != 0)) mute();
 }
+function changeProgress() {
+    audio.currentTime = progressBar.value * audio.duration;
+}
+
+function getTimeFromNum(num) {
+    return `${Math.floor(num / 60)}:${((Math.floor(num % 60)).toString().padStart(2, "0"))}`;
+}
 
 stop.addEventListener('click', stopMusic);
 play.addEventListener('click', playMusic);
@@ -112,3 +138,4 @@ back.addEventListener('click', backMusic);
 next.addEventListener('click', nextMusic);
 speakers.addEventListener('click', mute);
 volume.addEventListener('input', changeVolume);
+progressBar.addEventListener('input', changeProgress);

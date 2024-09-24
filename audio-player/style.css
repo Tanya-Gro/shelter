@@ -2,6 +2,7 @@
     --blue: rgb(47, 47, 78);
     --purple: rgb(125, 112, 134);
     --black: rgb(0, 0, 0);
+    --red: rgb(100, 33, 33);
 }
 
 * {
@@ -9,7 +10,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--purple);
 }
@@ -30,6 +31,7 @@ body {
     min-height: 325px;
     margin-top: 20px;
     margin-bottom: 60px;
+    padding: 5px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +43,10 @@ body {
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 330px;
+    margin: auto 15x;
+    box-shadow: 0 0 5px 3px rgb(63, 63, 63);
     background-image: url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
     background-size: cover;
     border-radius: 5%;
@@ -55,13 +59,25 @@ body {
 
 .nameTrack span {
     color: var(--black);
+    font-size: 18px;
+}
+
+.progressTine,
+.fullTime {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.progressBar {
+    width: 285px;
+    margin-bottom: 20px;
 }
 
 button {
     border-radius: 50%;
     border: 2px solid var(--blue);
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-size: cover;
     cursor: pointer;
     opacity: 0.5;
@@ -70,6 +86,7 @@ button {
 button:hover {
     border-color: var(--black);
     transition: 0.3s;
+    opacity: 0.8;
 }
 
 .back {
@@ -102,36 +119,45 @@ button:hover {
     background-image: url(./assets/buttons/mute.png)
 }
 
-.volume {
-    width: 50px;
-    height: 5px;
-    transform-origin: 11px 3px;
-    transform: rotate(-90deg);
+.rangeStyle {
     cursor: pointer;
     outline: none;
     appearance: none;
     background: grey;
     border-radius: 5px;
+    height: 8px;
 }
 
-.volume::-webkit-slider-thumb {
+.rangeStyle:hover {
+    border: 1px solid var(--red);
+    transition: 0.3s;
+}
+
+.volume {
+    width: 58px;
+    transform-origin: 10px -5px;
+    transform: rotate(-90deg);
+}
+
+.rangeStyle::-webkit-slider-thumb {
     appearance: none;
-    background: rgba(3, 3, 3, 0.808);
-    width: 11px;
-    height: 11px;
+    background: rgba(3, 3, 3, 0.8);
+    width: 14px;
+    height: 14px;
     border-radius: 100%;
 }
 
-.volume::-webkit-slider-thumb:hover {
-    width: 13px;
-    height: 13px;
+.rangeStyle::-webkit-slider-thumb:hover {
+    width: 18px;
+    height: 18px;
+    transition: 0.3s;
 }
 
 footer {
     width: 100%;
     height: 40px;
-    background: linear-gradient(90deg, var(--black) 0%, rgb(100, 33, 33) 35%, rgb(88, 108, 112) 100%);
-    filter: drop-shadow(0 0 0.75rem rgb(100, 33, 33));
+    background: linear-gradient(90deg, var(--black) 0%, var(--red) 35%, rgb(88, 108, 112) 100%);
+    filter: drop-shadow(0 0 0.75rem var(--red));
     display: flex;
     justify-content: space-around;
     align-items: center;
