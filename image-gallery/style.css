@@ -1,5 +1,7 @@
 :root {
     --bground: black;
+    --text: #e7b6a3bd;
+    --line: rgb(255, 187, 0);
 }
 
 * {
@@ -10,4 +12,55 @@
 
 .container {
     background-color: var(--bground);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+    color: var(--text);
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    border-bottom: 4px solid var(--line);
+}
+
+.logo {
+    max-width: 255px;
+}
+
+.logoImg {
+    max-width: 70px;
+}
+
+.searchContainer {
+    max-width: 250px;
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    border-radius: 100vh;
+    border: 2px solid var(--line);
+    padding: 5px 15px;
+}
+
+.searchButton {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    width: 21px;
+    height: 20px;
+    background-image: url(./assets/loupe.png);
+    background-size: contain;
+    border: 0px;
+    opacity: 0.3;
+    cursor: pointer;
 }
