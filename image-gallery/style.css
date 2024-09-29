@@ -1,0 +1,13 @@
+:root {
+    --bground: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--bground);
+}
