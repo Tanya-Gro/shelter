@@ -1,17 +1,17 @@
-const url = "https://api.unsplash.com/" + "/photos/random?query=fall&client_id=VW99YuRZqLS5w5qmq8V76A6v7e7NnlGFO7-pHJdAoH0";
+const url = "https://api.unsplash.com/";
+const atribute = "/photos/random?query=fall&client_id=VW99YuRZqLS5w5qmq8V76A6v7e7NnlGFO7-pHJdAoH0";
 const cardBox = document.querySelector('.cardBox');
+const searchButton = document.querySelector('.searchButton');
 const URLs = [];
 
 async function getImages() {
-    const res = await fetch(url);
+    const res = await fetch(url + atribute);
     const data = await res.json();
     showImage(data);
     // console.log(data);
 }
 for (let i = 0; i < 6; i++)
     getImages();
-
-//data.urls.regular;
 
 function showImage(data) {
     const img = cardBox.appendChild(document.createElement('div'));
