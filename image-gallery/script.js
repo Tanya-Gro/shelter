@@ -46,3 +46,11 @@ searchInput.addEventListener('keyup', event => {
     if (event.code === 'Enter' || event.code === 'NumpadEnter')
         letsSearch();
 });
+
+/******************** myself check ********************** */
+console.log("Вёрстка +10");
+console.log("При загрузке приложения на странице отображаются полученные от API изображения +10");
+console.log("При загрузке приложения на странице отображаются полученные от API изображения +10");
+console.log("Поиск +30");
+
+console.log("ИТОГО 60 баллов");
