@@ -32,10 +32,17 @@ function deletePicktures() {
         cards[i].remove();
 };
 
-searchButton.addEventListener('click', () => {
+function letsSearch() {
     let oldItem = atribute.slice(atribute.indexOf('=') + 1, atribute.indexOf('&'));
     let newItem = searchInput.value;
     atribute = atribute.replace(oldItem, newItem);
     deletePicktures();
     getStarted();
+    searchInput.focus();
+};
+
+searchButton.addEventListener('click', letsSearch);
+searchInput.addEventListener('keyup', event => {
+    if (event.code === 'Enter' || event.code === 'NumpadEnter')
+        letsSearch();
 });
