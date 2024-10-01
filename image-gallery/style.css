@@ -47,7 +47,6 @@ header {
 
 .searchContainer {
     max-width: 300px;
-    /* position: relative; */
 }
 
 .searchInput {
@@ -123,7 +122,6 @@ footer {
     width: 100%;
     height: 60px;
     background: linear-gradient(90deg, var(--text) 15%, var(--line) 25%, rgb(88, 108, 112) 70%);
-    /* filter: drop-shadow(0 0 0.75rem var(--text)); */
     border-top: 4px solid var(--line);
     padding: 10px 10px;
 }
