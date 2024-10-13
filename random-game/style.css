@@ -18,7 +18,15 @@ body {
 
 main {
   height: calc(100vh - 60px);
-  min-height: 300px;
+  min-height: 608px;
+  background-color: #90b482bd;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  /* width: 608px;
+  height: 608px; */
 }
 
 footer {
