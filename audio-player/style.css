@@ -1,0 +1,171 @@
+:root {
+    --blue: rgb(47, 47, 78);
+    --purple: rgb(125, 112, 134);
+    --black: rgb(0, 0, 0);
+    --red: rgb(100, 33, 33);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8)), url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-repeat: round;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+.wrapper {
+    min-width: 200px;
+    min-height: 325px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    background: rgba(72, 87, 90, 0.2);
+    box-shadow: 0px 7px 10px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.image {
+    width: 350px;
+    height: 330px;
+    margin: auto 15x;
+    box-shadow: 0 0 5px 3px rgb(63, 63, 63);
+    background-image: url("./assets/music/Carla\'s\ Dreams\ -\ Antiexemplu.jpg");
+    background-size: cover;
+    border-radius: 5%;
+    transition: 0.5s;
+}
+
+.nameTrack {
+    margin: 20px 20px;
+}
+
+.nameTrack span {
+    color: var(--black);
+    font-size: 18px;
+}
+
+.progressTine,
+.fullTime {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.progressBar {
+    width: 285px;
+    margin-bottom: 20px;
+}
+
+button {
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+button:hover {
+    border-color: var(--black);
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.back {
+    margin-left: 25px;
+    background-image: url(./assets/buttons/back.png)
+}
+
+.stop {
+    background-image: url(./assets/buttons/stop.png)
+}
+
+.play {
+    background-image: url(./assets/buttons/play.png)
+}
+
+.pause {
+    background-image: url(./assets/buttons/pause.png)
+}
+
+.next {
+    background-image: url(./assets/buttons/next.png)
+}
+
+
+.speakers {
+    background-image: url(./assets/buttons/speakers.png)
+}
+
+.mute {
+    background-image: url(./assets/buttons/mute.png)
+}
+
+.rangeStyle {
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background: grey;
+    border-radius: 5px;
+    height: 8px;
+}
+
+.rangeStyle:hover {
+    border: 1px solid var(--red);
+    transition: 0.3s;
+}
+
+.volume {
+    width: 58px;
+    transform-origin: 10px -5px;
+    transform: rotate(-90deg);
+}
+
+.rangeStyle::-webkit-slider-thumb {
+    appearance: none;
+    background: rgba(3, 3, 3, 0.8);
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+}
+
+.rangeStyle::-webkit-slider-thumb:hover {
+    width: 18px;
+    height: 18px;
+    transition: 0.3s;
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, var(--black) 0%, var(--red) 35%, rgb(88, 108, 112) 100%);
+    filter: drop-shadow(0 0 0.75rem var(--red));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    opacity: 0.8;
+}
+
+.rsslogo {
+    width: 100px;
+}
