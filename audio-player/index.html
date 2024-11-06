@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Audio player</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="image"></div>
+        <div class="nameTrack">
+            <span>Carla's Dreams - Antiexemplu</span>
+        </div>
+        <div class="progress">
+            <span class="progressTine">0:00</span>
+            <input type="range" name="progressBar" class="progressBar rangeStyle" min="0" max="1" step="0.01" value="0">
+            <span class="fullTime">0:00</span>
+        </div>
+        <div class="buttonsSet">
+            <button class="back"></button>
+            <button class="stop"></button>
+            <button class="play"></button>
+            <button class="next"></button>
+            <button class="speakers"></button>
+            <input type="range" name="volume" class="volume rangeStyle" min="0" max="1" step="0.05" value="1">
+        </div>
+    </div>
+    <footer>
+        <span class="footer-item">2024</span>
+        <a class="footer-item" href="https://github.com/Tanya-Gro">My GitHub</a>
+        <a class="footer-item" href="https://rs.school/courses/javascript"><img src="./assets/rs-school-logo.svg"
+                class="rsslogo" alt="RSS Logo"></a>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
