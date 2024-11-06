@@ -1,0 +1,968 @@
+@font-face {
+    font-family: "Arial";
+    src: url("../assets/fonts/arial/arial-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("../assets/fonts/arial/arial-italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("../assets/fonts/georgia/georgia-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.coll {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.all-screen {
+    width: 100%;
+}
+
+.center {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.main-header {
+    margin: 30px 40px;
+    text-decoration: none;
+    text-transform: none;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    margin: 0;
+    color: #F1CDB3;
+    font-size: 32px;
+    font-family: "Georgia";
+    font-weight: 400;
+    font-style: normal;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+.subtitle {
+    margin-top: 10px;
+    margin-left: 3px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: "Arial";
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.1em;
+}
+
+.burger {
+    display: none;
+}
+
+.navigation {
+    /* width: 37%; */
+    width: 443px;
+}
+
+.navigation-elem {
+    list-style-type: none;
+}
+
+.navigation-item-about {
+    border-bottom: 2px solid #F1CDB3;
+}
+
+.navigation-item a {
+    text-decoration: none;
+}
+
+.navigation-item a:hover {
+    transition: 0.2s;
+    /* border-bottom: 3px solid #F1CDB3; */
+    color: #FAFAFA;
+}
+
+/*------------------------------------ Not only ---------------------------------------*/
+.start-screen {
+    margin: 62px 40px 0px 40px;
+}
+
+.start-screen-content {
+    width: 42%;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+/* 
+.start-screen-content .h-2 {
+    margin-top: 163px;
+} */
+
+.start-screen-content .p-l {
+    margin-top: 42px;
+    padding-bottom: 42px;
+}
+
+.pets-anchor .button_primary {
+    width: 207px;
+    height: 52px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.start-screen-img {
+    display: block;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    width: 58%;
+    /* height: 728px; */
+}
+
+/*-------------- about -------------------------------------------------*/
+.about {
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.about-img {
+    width: 23.5%;
+    display: block;
+    margin: auto 60px auto 0px;
+}
+
+.about-content {
+    margin: 94px 0px 99px 60px;
+    width: 33.6%;
+    /* height: 380px; */
+    /* margin-bottom: 20px; */
+}
+
+.about-content .p-l {
+    margin-top: 24px;
+}
+
+/* --------------------------our friend ---------------------------------------*/
+.pets {
+    width: 100%;
+}
+
+.pets-header {
+    text-align: center;
+    margin: 81px auto 60px;
+}
+
+.pets-header .h-3 {
+    text-align: center;
+}
+
+.pets-slider {
+    width: 100%;
+    justify-content: center;
+}
+
+.slider-round-button {
+    width: 52px;
+    height: 52px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.round-buttom-img {
+    width: 14px;
+    height: 6px;
+    margin: auto auto;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.slider-card {
+    margin: 0px 3.5%;
+    cursor: pointer;
+    border-radius: 9px;
+    min-width: 270px;
+}
+
+.slider-card:hover .slider-button {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.4s;
+}
+
+.slider-card:hover {
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    background: #FFFFFF;
+    transition: 0.4s;
+}
+
+.slider-img {
+    width: 100%;
+    /* height: 270px; */
+    border-radius: 9px;
+    margin-bottom: 30px;
+}
+
+.pets-button-link {
+    margin: 57px auto 0px;
+}
+
+.pets-button-link .button_primary {
+    width: 261px;
+    height: 52px;
+
+    text-align: center;
+    padding: 15px 3%;
+    margin-bottom: 100px;
+}
+
+/* -------------------------- help ---------------------------------------*/
+.help {
+    padding: 80px 125px 100px 125px;
+}
+
+.help .h-3 {
+    margin-bottom: 56px;
+    text-align: center;
+    padding: 2px auto;
+}
+
+.help-content {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 119px;
+}
+
+.help-card {
+    /* height: 113px; */
+    justify-content: space-between;
+    padding: 0 0;
+}
+
+.card-img {
+    margin: 0 auto 34px;
+}
+
+.help-card .h-4 {
+    height: 23px;
+}
+
+/* -------------------------- in addition ----------------------------------*/
+/* .donatation {
+} */
+
+.donatation-card {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    justify-content: center;
+}
+
+.donatation-img {
+    display: block;
+    width: 39.4%;
+    margin: auto 15px 10px 15px;
+}
+
+/* .donatation-content .h-3 {
+    /* width: 300px;
+    height: 90px; */
+/* } */
+.donatation-content {
+    width: 30.1%;
+    margin: 0 10px;
+}
+
+.donatation-content .h-5 {
+    margin: 20px 0px 18px 0px;
+    text-align: left;
+}
+
+.credit-card {
+    width: 320px;
+    max-width: 320px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 9px;
+    margin-right: 33px;
+    margin-bottom: 20px;
+    /* margin-left: 1px; */
+}
+
+.credit-card-img {
+    width: 30px;
+    height: 23px;
+    margin-right: 15px;
+}
+
+.credit-card-link {
+    text-decoration: none;
+}
+
+.credit-card-num {
+    margin-right: 0;
+}
+
+/* -------------------------- footer 1280 ---------------------------------------*/
+.main-footer {
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    padding: 40px 40px 0px 40px;
+}
+
+/*******first box 1280*****/
+.main-footer-contacts {
+    margin: 16px auto 60px 0px;
+    min-width: 278px;
+}
+
+.main-footer-contacts .h-3 {
+    width: 280px;
+}
+
+.contact-item {
+    margin-top: 40px;
+}
+
+.mail-to,
+.call-to {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mail-to img {
+    margin-right: 20px;
+}
+
+.mail-to .h-4 {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.call-to .phone {
+    margin-right: 20px;
+}
+
+.call-to .h-4 {
+    text-align: left;
+    margin-top: 5px;
+}
+
+/*****second box 1280******/
+.main-footer-location {
+    margin: 16px auto;
+    width: 302px;
+    /* min-width: 278px; */
+
+}
+
+.location-item-boston,
+.location-item-london {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 34px 0px 0px 0px;
+}
+
+.location-item-boston img {
+    margin-top: 6px;
+}
+
+.location-item-boston .h-4 {
+    text-align: left;
+}
+
+.location-item-london {
+    margin-top: 32px;
+}
+
+.location-item-boston img,
+.location-item-london img {
+    width: 22px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.location-item-london .h-4 {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.main-footer-img {
+    margin: auto 0px 0px auto;
+    min-width: 260px;
+    display: block;
+}
+
+/* ---------------- buttons -----------*/
+.button_primary {
+    border-radius: 100px;
+    border: 0px;
+
+    font-family: "Georgia";
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #292929;
+}
+
+.button_primary:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+    transition: 0.4s;
+}
+
+.slider-button {
+    margin: 30px auto;
+    width: 70%;
+    /* height: 52px; */
+    padding: 15px 45px 15px 45px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+
+    font-family: "Georgia";
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    padding: 15px 15%;
+
+    cursor: pointer;
+}
+
+.round-button {
+    width: 52px;
+    height: 52px;
+    margin-top: 192px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.round-button:hover {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.4s;
+}
+
+/* ---------------- headers ----------- */
+.h-2 {
+    font-family: "Georgia";
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 57.2px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.h-3 {
+    font-family: "Georgia";
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+.h-4 {
+    font-family: "Georgia";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.h-5 {
+    font-family: "Georgia";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+}
+
+/* -------------- paragraphs ---------- */
+.p-l {
+    font-family: "Arial";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.p-s {
+    font-family: "Arial";
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
+
+.slider-p {
+    font-family: "Georgia";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22.72px;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+/* -------------- colors -------------- */
+.bg-primary {
+    /* background: #F1CDB3; */
+    background: #f2ceb3;
+}
+
+.color-primary {
+    /* color: #F1CDB3; */
+    color: #f2ceb3;
+}
+
+.bg-brown {
+    /* background-image: linear-gradient(135deg, #534135, #222021); */
+    background: url("../assets/noise_transparent@2x.png"), linear-gradient(135deg, #534135, #222021);
+}
+
+.bg-light-s {
+    background: #FAFAFA;
+}
+
+.color-light-s {
+    color: #FAFAFA;
+}
+
+.bg-grey {
+    background-color: #F6F6F6;
+}
+
+.color-dark-s {
+    color: #CDCDCD;
+}
+
+.color-dark-l {
+    color: #545454;
+}
+
+.color-dark-m {
+    color: #B2B2B2;
+}
+
+.color-dark-xl {
+    color: #4C4C4C;
+}
+
+.color-dark-3xl {
+    color: #292929;
+}
+
+.color-white {
+    color: #FFFFFF;
+}
+
+/************************* MEDIA ******************************/
+/************************* 1279 ********************************/
+@media (max-width : 1279px) {
+
+    /******** our friends 1279 ********/
+    .pets-slider .last {
+        display: none;
+    }
+
+    .pets-slider .left {
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .pets-slider .right {
+        margin-right: 30px;
+        margin-left: 0;
+    }
+
+    .round-buttom-img {
+        margin: auto 33%;
+    }
+}
+
+/************************* 820 ********************************/
+@media (max-width : 820px) {
+
+    /******** not only 820********/
+    .main-header {
+        margin: 30px 4%;
+    }
+
+    .start-screen {
+        margin: 0px 4%;
+        flex-direction: column;
+    }
+
+    .start-screen-content {
+        width: 65%;
+        min-width: 300px;
+        margin: 30px auto;
+    }
+
+    .start-screen-content .h-2 {
+        margin-top: 0;
+    }
+
+    .pets-anchor .button_primary {
+        margin-left: calc(50% - 103px);
+    }
+
+    .start-screen-img {
+        margin: 69px 0px 0px auto;
+        width: 80.4%;
+    }
+
+    /******** about 820********/
+    .about {
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    .about-content {
+        order: 1;
+        margin: 80px auto;
+        width: 56%;
+    }
+
+    .about-img {
+        width: 39%;
+        min-width: 260px;
+        margin: 80px auto 100px auto;
+        order: 2;
+        margin: 0 auto;
+    }
+
+    /******** our friends 820********/
+    .slider-card {
+        margin: 0px 3%;
+    }
+
+    /******** help 820********/
+    .help {
+        padding: 80px 9% 100px 9%;
+    }
+
+
+    .help-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
+    }
+
+    /******** donatation 820********/
+    .donatation-card {
+        flex-direction: column;
+        padding: 80px 17.25% 100px 17.25%;
+    }
+
+    .donatation-content {
+        order: 1;
+        margin: 0 auto 60px auto;
+        width: 75.35%;
+    }
+
+    .credit-card {
+        padding: 11px 13px 10px 15px;
+        margin-right: 30px;
+        width: 90%;
+    }
+
+    .donatation-img {
+        order: 2;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    /******** footer 820********/
+    .main-footer {
+        padding: 30px 34px 0px 34px;
+    }
+
+    .main-footer-location {
+        margin: 0px 30px 40px 30px;
+        width: 43%;
+    }
+
+    .call-to .h-4 {
+        margin-top: 4px;
+    }
+
+    .main-footer-contacts {
+        margin: 0px 30px 40px 30px;
+        width: 39.8%;
+    }
+
+    .main-footer-img {
+        margin: 25px auto 0px auto;
+    }
+}
+
+/******************************** 767 *****************************/
+@media (max-width : 767px) {
+    .navigation {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 22px;
+    }
+
+    .burger:before,
+    .burger:after,
+    .burger span {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #F1CDB3;
+    }
+
+    .burger span {
+        top: 9px;
+    }
+
+    .burger:before {
+        top: 0;
+    }
+
+    .burger:after {
+        bottom: 0;
+    }
+
+    /******** our friends/pets ********/
+    .pets-header {
+        margin: 81px auto 40px;
+    }
+
+    .pre-last {
+        display: none;
+    }
+
+    .pets-slider {
+        flex-wrap: wrap;
+    }
+
+    /******** footer ********/
+    .main-footer-img {
+        width: 260px;
+        height: 269px;
+    }
+}
+
+/****************************** 530 ******************************/
+@media (max-width : 530px) {
+    .help-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 32px;
+    }
+
+    .help-card .h-4,
+    .credit-card-link .h-4 {
+        font-size: 15px;
+        line-height: 16.5px;
+        letter-spacing: 0.06em;
+    }
+
+    .card-img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-bottom: 20px;
+    }
+
+    /******** our friends/pets 530 ********/
+    .slider-card {
+        order: 1;
+    }
+
+    .pets-slider .left {
+        margin-right: 40px;
+    }
+
+    .pets-slider .right {
+        margin-left: 40px;
+    }
+
+    .pets-slider .slider-round-button {
+        order: 2;
+        position: relative;
+    }
+
+    .left .round-button,
+    .right .round-button {
+        margin-top: 0px;
+        position: absolute;
+        bottom: -20px;
+    }
+
+    .pets-button-link .button_primary {
+        margin-bottom: 45px;
+    }
+
+    /********** help 530**********/
+    .help {
+        padding: 42px 15px 32px 15px;
+    }
+
+    .help .h-3 {
+        margin-bottom: 40px;
+    }
+
+    /******** donatation 530********/
+    .donatation-card {
+        padding: 42px 20px 38px 20px;
+    }
+
+    .h-3 {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+    }
+
+    .donatation-content {
+        margin: 0 0 35px 0;
+        width: 100%;
+    }
+
+    .donatation-content .h-5 {
+        margin: 20px 0px 20px 2px;
+        line-height: 24px;
+        letter-spacing: 0em;
+    }
+
+    .credit-card {
+        /* padding: 10px 13px 10px 15px; */
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .p-s {
+        text-align: justify;
+    }
+
+    .donatation-img {
+        width: 94%;
+        margin: 5px auto;
+    }
+
+    /********* footer 530*********/
+    .main-footer {
+        padding: 10px 10px 0px 10px;
+    }
+
+    .main-footer-contacts {
+        margin: 20px 11px;
+    }
+
+    .contact-item {
+        margin-top: 39px;
+        margin-left: 16px;
+    }
+
+    .main-footer-location {
+        /* margin: 20px 0px; */
+        width: 100%;
+    }
+
+    .main-footer-location .h-3 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .main-footer-location a {
+        margin-top: 40px;
+    }
+
+    .main-footer-img {
+        margin-top: 20px;
+    }
+}
+
+/****************************** 320 ******************************/
+@media (max-width : 320px) {
+
+    .main-header {
+        margin: 30px 6%;
+    }
+
+    /******** not only ********/
+    .start-screen {
+        margin: 0px 0px;
+    }
+
+    .h-2 {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+
+    .p-l {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .start-screen-img {
+        margin: 75px 10px 0px auto;
+        width: 81.3%;
+    }
+
+    /********** about *********/
+    .about {
+        padding: 0px 23px;
+    }
+
+    .about-content {
+        margin: 42px 0px;
+        width: 100%;
+    }
+
+
+    .about-content .p-l {
+        text-align: justify;
+    }
+}
