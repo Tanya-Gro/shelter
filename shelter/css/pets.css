@@ -21,6 +21,11 @@ html {
     padding: 0;
 }
 
+body.active {
+    height: 100%;
+    overflow: hidden;
+}
+
 .container {
     width: 100%;
 }
@@ -84,6 +89,12 @@ html {
 .navigation-item a:hover {
     transition: 0.2s;
     color: #292929;
+}
+
+.wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*****************main/friends****************/
@@ -270,6 +281,12 @@ html {
     color: #292929;
 }
 
+.on:hover {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.4s;
+}
+
 .off {
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
@@ -344,6 +361,15 @@ html {
     line-height: 22.72px;
     letter-spacing: 0.06em;
     text-align: center;
+}
+
+
+.h-5 {
+    font-family: "Georgia";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.06em;
 }
 
 /*---------------- colors -----------------*/
@@ -450,8 +476,105 @@ html {
 
 /******************************** 767 *****************************/
 @media (max-width : 767px) {
+    body.active {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .navigation.active {
+        right: 0;
+    }
+
+    @keyframes burger-rotate {
+        from {
+            transform: rotate(0turn);
+            /* opacity: 0; */
+        }
+
+        100% {
+            transform: rotate(0.25turn);
+            /* opacity: 1; */
+        }
+    }
+
+    @keyframes burger-rotate-back {
+        from {
+            transform: rotate(0.25turn);
+        }
+
+        50% {
+            transform: rotate(0.125turn);
+        }
+
+        100% {
+            transform: rotate(0turn);
+        }
+    }
+
+    .burger {
+        animation-name: burger-rotate-back;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+    .burger.active {
+        position: fixed;
+        right: 30px;
+        animation-name: burger-rotate;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+
     .navigation {
-        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        right: -100%;
+        top: 0;
+        transition: right 0.4s ease 0.1s;
+        background-color: rgba(41, 41, 41, 0.6);
+
+        overflow: auto;
+    }
+
+    .navigation-elem {
+        width: 320px;
+        height: 100%;
+        min-height: 460px;
+        background: rgba(41, 41, 41, 1);
+        margin-right: 0;
+        margin-left: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation-item-pets p,
+    .navigation-item a {
+        font-size: 32px;
+        line-height: 51.2px;
+        color: #CDCDCD;
+    }
+
+    .navigation-item-pets p {
+        text-align: center;
+        color: #FAFAFA;
+    }
+
+    .navigation-item-pets {
+        width: 130px;
+        margin: 20px 0;
+    }
+
+    .navigation-item {
+        margin: 20px 0;
+    }
+
+    .navigation-item a:hover {
+        transition: 0.2s;
+        color: rgba(250, 250, 250, 1);
+        ;
     }
 
     .burger {
@@ -459,6 +582,8 @@ html {
         position: relative;
         width: 30px;
         height: 22px;
+        cursor: pointer;
+        z-index: 5;
     }
 
     .burger:before,
@@ -472,7 +597,7 @@ html {
     }
 
     .burger span {
-        top: 9px;
+        top: 10px;
     }
 
     .burger:before {
@@ -560,5 +685,169 @@ html {
 @media (max-width : 320px) {
     .pets-header {
         margin: 28px 6%;
+    }
+}
+
+/****************************** popUp ******************************/
+.popUp_container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    /* padding: auto 0; */
+    background: rgba(41, 41, 41, 0.6);
+    overflow: auto;
+}
+
+.popUp_container.active {
+    left: 0;
+}
+
+.popUp {
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+    border-radius: 9px;
+    background: #FAFAFA;
+
+    width: 900px;
+    min-height: 500px;
+
+    margin: 0 auto;
+    margin-top: max(50vh - 250px, 52px);
+    margin-right: max(50vw - 450px, 43px);
+}
+
+.popUp_img {
+    margin: auto 0;
+    border-radius: 9px;
+    width: 500px;
+    height: 500px;
+}
+
+.popUp_close_container {
+    position: relative;
+    width: 0;
+}
+
+.popUp_close {
+    position: relative;
+    bottom: 62px;
+    left: -20px;
+    /* width: 52px; */
+    background: rgba(122, 122, 122, 0.6);
+    z-index: 6;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.popUp_content {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    margin-left: 30px;
+    /* margin-bottom: 10px; */
+}
+
+.popUp_subtitle {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.popUp_text {
+    margin: 40px 19px 34px 0;
+}
+
+.popUp_description li {
+    color: #F1CDB3;
+    line-height: 28px;
+    margin-left: 15px;
+    margin-right: 0;
+    letter-spacing: 0.12em;
+}
+
+.popUp_description li span {
+    color: #000000;
+}
+
+@media (max-width : 965px) {
+
+    /********** popUp 965*******/
+    .popUp {
+        width: 630px;
+        min-height: 350px;
+        margin-top: max(50vh - 175px, 52px);
+        margin-right: max(50vw - 315px, 43px);
+    }
+
+    .popUp_img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .popUp_content {
+        margin: 11px 8px 11px 11px;
+        /* margin-top: 11px;
+        margin-left: 11px;
+        margin-bottom: 11px; */
+    }
+
+    .popUp_subtitle {
+        margin-top: 9px;
+    }
+
+    .popUp_text {
+        margin: 21px 0 15px 0;
+        /* font-family: Georgia; */
+        font-size: 13px;
+        line-height: 14.3px;
+    }
+
+    .popUp_description li {
+        margin-left: 15px;
+        line-height: 22px;
+    }
+}
+
+/************************************ popUp 675 *******/
+@media (max-width : 675px) {
+    .popUp {
+        width: 240px;
+        min-height: 341px;
+        margin-top: max(50vh - 170.5px, 52px);
+        margin-right: max(50vw - 120px, 43px);
+    }
+
+    .popUp_img {
+        display: none;
+    }
+
+    .popUp_content {
+        margin: 10px 10px;
+        width: 220px;
+    }
+
+    .popUp_title {
+        text-align: center;
+    }
+
+    .popUp_subtitle {
+        margin-top: 10px auto;
+        text-align: center;
+    }
+
+    .popUp_text {
+        margin: 22px 0;
+        margin-bottom: 17px;
+        text-align: justify;
+        width: 220px;
+    }
+
+    .popUp_description li {
+        margin-left: 15px;
+        width: 210px;
+    }
+
+    .popUp_close {
+        left: -20px;
     }
 }

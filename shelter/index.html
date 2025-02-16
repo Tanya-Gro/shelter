@@ -25,7 +25,7 @@
                         <span></span>
                     </div>
                     <nav class="navigation">
-                        <ul class="navigation-elem between">
+                        <ul class="navigation-elem">
                             <li class="navigation-item-about color-light-s">
                                 <p class="p-l color-light-s">About the shelter</p>
                             </li>
@@ -87,31 +87,12 @@
                     <h3 class="h-3 color-dark-l">Our friends who<br>are looking for a house</h3>
                 </div>
                 <div class="pets-slider row">
-                    <div class="slider-round-button left">
-                        <button class="round-button"><img class="round-buttom-img" src="./assets/png/Arrow.png"
-                                alt="Arrow"></button>
+                    <button class="round-button slider-round-button left">⬅</button>
+                    <div class="slider_wrapper">
+                        <div class="slider row">
+                        </div>
                     </div>
-
-                    <div class="slider-card coll bg-light-s">
-                        <img class="slider-img" src="./assets/slider/pets-katrine.png" alt="katrine">
-                        <p class="slider-p color-dark-l">Katrine</p>
-                        <button class="slider-button bg-light-s">Learn more</button>
-                    </div>
-                    <div class="slider-card coll bg-light-s pre-last">
-                        <img class="slider-img" src="./assets/slider/pets-jennifer.png" alt="jennifer">
-                        <p class="slider-p color-dark-l">Jennifer</p>
-                        <button class="slider-button bg-light-s">Learn more</button>
-                    </div>
-                    <div class="slider-card coll bg-light-s last">
-                        <img class="slider-img" src="./assets/slider/pets-woody.png" alt="woody">
-                        <p class="slider-p  color-dark-l">Woody</p>
-                        <button class="slider-button bg-light-s">Learn more</button>
-                    </div>
-
-                    <div class="slider-round-button right">
-                        <button class="round-button"><img class="round-buttom-img rotate" src="./assets/png/Arrow.png"
-                                alt="Arrow"></button>
-                    </div>
+                    <button class="round-button slider-round-button right">⮕</button>
                 </div>
                 <form class="pets-button-link" action="./pets.html">
                     <button class="button_primary bg-primary">Get to know the rest</button>
@@ -225,6 +206,20 @@
                 <img class="main-footer-img" src="./assets/png/footer-puppy.png" alt="footer-puppy">
             </div>
         </footer>
+        <div class="popUp_container">
+            <div class="popUp row">
+                <img src="" alt="" class="popUp_img">
+                <div class="popUp_content">
+                    <h3 class="h-3 popUp_title"></h3>
+                    <h4 class="h-4 popUp_subtitle"></h4>
+                    <h5 class="h-5 popUp_text"></h5>
+                    <ul class="popUp_description"></ul>
+                </div>
+                <div class="popUp_close_container">
+                    <button class="round-button popUp_close">&#10006;</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/index.js"></script>
 </body>
